@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atlas Corporation</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            50: '#eef4ff',
+            100: '#dbe7ff',
+            500: '#2f6feb',
+            600: '#2563eb',
+            700: '#1d4ed8',
+          }
+        }
+      }
+    }
+  }
+</script>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+
+  @keyframes atlas-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-18px); }
+  }
+  .atlas-robot-float {
+    animation: atlas-float 4.5s ease-in-out infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .atlas-robot-float { animation: none; }
+  }
+</style>
+</head>
+<body class="bg-white text-slate-900 antialiased">
+
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-2 shrink-0">
+      <img src="assets/atlas-logo-icon.png" alt="" class="w-10 h-auto">
+      <span class="leading-tight">
+        <span class="block font-bold text-lg tracking-tight">ATLAS</span>
+        <span class="block text-[10px] tracking-[0.2em] text-slate-500 -mt-1">CORPORATION</span>
+      </span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-700">
+      <a href="#" class="hover:text-brand-600">Inicio</a>
+      <a href="#servicios" class="hover:text-brand-600">Servicios</a>
+      <a href="#paquetes" class="hover:text-brand-600">Paquetes</a>
+      <a href="#casos" class="hover:text-brand-600">Casos de Éxito</a>
+      <a href="#" class="hover:text-brand-600">Nosotros</a>
+      <button class="flex items-center gap-1 hover:text-brand-600">
+        Recursos
+        <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0l-4.24-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+      </button>
+    </nav>
+
+    <a href="#" class="hidden sm:inline-flex items-center bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors">
+      Hablar con Atlas
+    </a>
+
+    <button class="lg:hidden p-2 -mr-2" aria-label="Menu">
+      <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- Hero -->
+<section id="hero" class="relative overflow-hidden pt-14 pb-16">
+  <div class="absolute inset-0 -z-10 bg-white">
+    <img id="circuitBaseImg" src="assets/circuit-bg.jpg" alt="" class="w-full h-full object-cover opacity-45">
+    <canvas id="circuitGlowCanvas" class="absolute inset-0 w-full h-full"></canvas>
+  </div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="grid lg:grid-cols-2 gap-12 items-center">
+    <div>
+      <p class="text-brand-600 text-sm font-semibold tracking-wide mb-4">BIENVENIDO A ATLAS CORPORATION</p>
+      <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight leading-[1.1] mb-6">
+        Automatizamos ideas.<br>
+        Construimos el<br>
+        <span class="text-brand-600">futuro digital.</span>
+      </h1>
+      <p class="text-slate-500 text-base sm:text-lg leading-relaxed mb-8 max-w-md">
+        Ayudamos a empresas y emprendedores a digitalizar, automatizar y escalar sus procesos con soluciones tecnológicas inteligentes.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 mb-12">
+        <a href="#" class="inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-semibold px-6 py-3.5 rounded-full transition-colors">
+          Descubrir mi Atlas Score
+          <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+        </a>
+        <a href="#servicios" class="inline-flex items-center justify-center bg-white border border-slate-300 hover:border-slate-400 font-semibold px-6 py-3.5 rounded-full transition-colors">
+          Conoce nuestros servicios
+        </a>
+      </div>
+
+      <p class="text-slate-400 text-xs font-semibold tracking-wide mb-4">TECNOLOGÍA QUE TRABAJA PARA TI</p>
+      <div class="flex flex-wrap gap-x-6 gap-y-3 text-sm text-slate-500 font-medium">
+        <span class="flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          Desarrollo Web
+        </span>
+        <span class="flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><circle cx="12" cy="12" r="3"/></svg>
+          Automatización
+        </span>
+        <span class="flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0c-.845.845-1.343 1.508-1.5 2.5H9.5c-.157-.992-.655-1.655-1.5-2.5z"/></svg>
+          Inteligencia Artificial
+        </span>
+        <span class="flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path stroke-linecap="round" d="M8 7l7.5 9.5M16 7L9 16"/></svg>
+          Integraciones
+        </span>
+        <span class="flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17V9m4 8V5m4 12v-6M5 21h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+          Datos &amp; Analítica
+        </span>
+      </div>
+    </div>
+
+    <div class="relative flex justify-center">
+      <div class="relative w-64 sm:w-80 lg:w-96">
+        <img src="assets/atlas-robot.png" alt="Atlas, el robot asistente de Atlas Corporation" class="w-full relative z-10 atlas-robot-float">
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- Servicios -->
+<section id="servicios" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+  <p class="text-brand-600 text-4xl sm:text-5xl font-semibold tracking-wide mb-3">NUESTROS SERVICIOS</p>
+  <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-4">Soluciones digitales para cada necesidad</h2>
+  <p class="text-slate-500 max-w-xl mx-auto mb-12">Desde una página web hasta la automatización completa de tu negocio. Tenemos la solución perfecta para ti.</p>
+
+  <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-5 text-left mb-10">
+    <div class="border border-slate-200 rounded-2xl p-6 hover:shadow-md transition-shadow">
+      <div class="w-11 h-11 rounded-xl bg-brand-50 flex items-center justify-center mb-5">
+        <svg class="w-5 h-5 text-brand-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5h18M5 5h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2z"/></svg>
+      </div>
+      <h3 class="font-bold mb-2">Desarrollo Web</h3>
+      <p class="text-sm text-slate-500 mb-4">Páginas y plataformas web modernas, rápidas y adaptadas a tu negocio.</p>
+      <a href="#" class="text-sm font-semibold text-brand-600">Saber más →</a>
+    </div>
+    <div class="border border-slate-200 rounded-2xl p-6 hover:shadow-md transition-shadow">
+      <div class="w-11 h-11 rounded-xl bg-brand-50 flex items-center justify-center mb-5">
+        <svg class="w-5 h-5 text-brand-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/></svg>
+      </div>
+      <h3 class="font-bold mb-2">Automatización</h3>
+      <p class="text-sm text-slate-500 mb-4">Eliminamos tareas repetitivas y optimizamos tus procesos.</p>
+      <a href="#" class="text-sm font-semibold text-brand-600">Saber más →</a>
+    </div>
+    <div class="border border-slate-200 rounded-2xl p-6 hover:shadow-md transition-shadow">
+      <div class="w-11 h-11 rounded-xl bg-brand-50 flex items-center justify-center mb-5">
+        <svg class="w-5 h-5 text-brand-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0c-.845.845-1.343 1.508-1.5 2.5H9.5c-.157-.992-.655-1.655-1.5-2.5z"/></svg>
+      </div>
+      <h3 class="font-bold mb-2">Inteligencia Artificial</h3>
+      <p class="text-sm text-slate-500 mb-4">Incorporamos IA para tomar mejores decisiones y mejorar la experiencia.</p>
+      <a href="#" class="text-sm font-semibold text-brand-600">Saber más →</a>
+    </div>
+    <div class="border border-slate-200 rounded-2xl p-6 hover:shadow-md transition-shadow">
+      <div class="w-11 h-11 rounded-xl bg-brand-50 flex items-center justify-center mb-5">
+        <svg class="w-5 h-5 text-brand-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path stroke-linecap="round" d="M8 7l7.5 9.5M16 7L9 16"/></svg>
+      </div>
+      <h3 class="font-bold mb-2">Integraciones</h3>
+      <p class="text-sm text-slate-500 mb-4">Conectamos tus herramientas y sistemas para que trabajen juntos.</p>
+      <a href="#" class="text-sm font-semibold text-brand-600">Saber más →</a>
+    </div>
+    <div class="border border-slate-200 rounded-2xl p-6 hover:shadow-md transition-shadow">
+      <div class="w-11 h-11 rounded-xl bg-brand-50 flex items-center justify-center mb-5">
+        <svg class="w-5 h-5 text-brand-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17V9m4 8V5m4 12v-6M5 21h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+      </div>
+      <h3 class="font-bold mb-2">Datos &amp; Analítica</h3>
+      <p class="text-sm text-slate-500 mb-4">Transformamos tus datos en información útil para hacer crecer tu negocio.</p>
+      <a href="#" class="text-sm font-semibold text-brand-600">Saber más →</a>
+    </div>
+  </div>
+
+  <a href="#" class="inline-flex items-center justify-center bg-white border border-slate-300 hover:border-slate-400 font-semibold px-6 py-3 rounded-full transition-colors">
+    Ver todos los servicios
+  </a>
+</section>
+
+<!-- Paquetes -->
+<section id="paquetes" class="bg-slate-50 py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <p class="text-brand-600 text-sm font-semibold tracking-wide mb-3">NUESTROS PAQUETES</p>
+    <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-4">Elige el paquete ideal para tu negocio</h2>
+    <p class="text-slate-500 max-w-xl mx-auto mb-12">Soluciones diseñadas para cada etapa de crecimiento</p>
+
+    <div class="grid lg:grid-cols-3 gap-6 text-left items-start">
+      <!-- Start -->
+      <div class="relative bg-gradient-to-br from-green-50 via-white to-green-100 rounded-2xl border border-green-200 p-8 flex flex-col overflow-hidden">
+        <img src="assets/robot-crossedarms-green.png" alt="Robot Atlas Start" class="hidden sm:block absolute right-2 top-36 w-20 lg:w-24 object-contain pointer-events-none select-none">
+        <p class="text-green-600 font-bold text-sm mb-1">ATLAS START</p>
+        <h3 class="text-xl font-bold mb-4 max-w-[75%]">Digitaliza tu negocio</h3>
+        <p class="text-xs text-slate-400 mb-1">Desde</p>
+        <p class="text-3xl font-extrabold mb-6">$2.490.000 <span class="text-sm font-medium text-slate-400">COP</span></p>
+        <ul class="space-y-3 text-sm text-slate-600 mb-8">
+          <li class="flex gap-2"><span class="text-green-600">✓</span>Página web profesional</li>
+          <li class="flex gap-2"><span class="text-green-600">✓</span>1 Automatización básica</li>
+          <li class="flex gap-2"><span class="text-green-600">✓</span>Integración con WhatsApp</li>
+          <li class="flex gap-2"><span class="text-green-600">✓</span>Soporte 30 días</li>
+          <li class="flex gap-2"><span class="text-green-600">✓</span>Implementación 7-14 días</li>
+        </ul>
+        <a href="#" class="relative text-center border border-green-500 text-green-600 font-semibold py-3 rounded-full hover:bg-green-50 transition-colors">Ver más</a>
+      </div>
+
+      <!-- Business -->
+      <div class="relative bg-gradient-to-br from-brand-50 via-white to-blue-100 rounded-2xl border-2 border-brand-500 p-8 flex flex-col shadow-lg overflow-hidden">
+        <span class="absolute top-5 -right-9 rotate-45 bg-brand-600 text-white text-[10px] font-bold px-10 py-1">MÁS POPULAR</span>
+        <img src="assets/robot-thumbsup.png" alt="Robot Atlas Business" class="hidden sm:block absolute right-2 top-44 w-24 lg:w-28 object-contain pointer-events-none select-none">
+        <p class="text-brand-600 font-bold text-sm mb-1">ATLAS BUSINESS</p>
+        <h3 class="text-xl font-bold mb-4 max-w-[75%]">Automatiza y conecta tu negocio</h3>
+        <p class="text-xs text-slate-400 mb-1">Desde</p>
+        <p class="text-3xl font-extrabold mb-6">$5.990.000 <span class="text-sm font-medium text-slate-400">COP</span></p>
+        <ul class="space-y-3 text-sm text-slate-600 mb-8">
+          <li class="flex gap-2"><span class="text-brand-600">✓</span>Web avanzada + Formularios</li>
+          <li class="flex gap-2"><span class="text-brand-600">✓</span>Hasta 3 Automatizaciones</li>
+          <li class="flex gap-2"><span class="text-brand-600">✓</span>3 Integraciones</li>
+          <li class="flex gap-2"><span class="text-brand-600">✓</span>Dashboard básico</li>
+          <li class="flex gap-2"><span class="text-brand-600">✓</span>IA básica incluida</li>
+          <li class="flex gap-2"><span class="text-brand-600">✓</span>Soporte 60 días</li>
+          <li class="flex gap-2"><span class="text-brand-600">✓</span>Implementación 15-30 días</li>
+        </ul>
+        <a href="#" class="relative text-center bg-brand-600 hover:bg-brand-700 text-white font-semibold py-3 rounded-full transition-colors">Ver más</a>
+      </div>
+
+      <!-- Enterprise -->
+      <div class="relative bg-gradient-to-br from-purple-50 via-white to-purple-100 rounded-2xl border border-purple-200 p-8 flex flex-col overflow-hidden">
+        <img src="assets/robot-lightbulb-pink.png" alt="Robot Atlas Enterprise" class="hidden sm:block absolute right-2 top-44 w-24 lg:w-28 object-contain pointer-events-none select-none">
+        <p class="text-purple-600 font-bold text-sm mb-1">ATLAS ENTERPRISE</p>
+        <h3 class="text-xl font-bold mb-4 max-w-[75%]">Construimos tu ecosistema digital</h3>
+        <p class="text-xs text-slate-400 mb-1">Desde</p>
+        <p class="text-3xl font-extrabold mb-6">$12.900.000 <span class="text-sm font-medium text-slate-400">COP</span></p>
+        <ul class="space-y-3 text-sm text-slate-600 mb-8">
+          <li class="flex gap-2"><span class="text-purple-600">✓</span>Plataforma personalizada</li>
+          <li class="flex gap-2"><span class="text-purple-600">✓</span>Automatizaciones avanzadas</li>
+          <li class="flex gap-2"><span class="text-purple-600">✓</span>Integraciones API</li>
+          <li class="flex gap-2"><span class="text-purple-600">✓</span>Inteligencia Artificial</li>
+          <li class="flex gap-2"><span class="text-purple-600">✓</span>Dashboards avanzados</li>
+          <li class="flex gap-2"><span class="text-purple-600">✓</span>Soporte 90 días</li>
+          <li class="flex gap-2"><span class="text-purple-600">✓</span>Implementación 30-60+ días</li>
+        </ul>
+        <a href="#" class="relative text-center border border-purple-500 text-purple-600 font-semibold py-3 rounded-full hover:bg-purple-50 transition-colors">Ver más</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<section class="py-16 border-b border-slate-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <p class="text-brand-600 text-sm font-semibold tracking-wide mb-10">EMPRESAS QUE YA CONFÍAN EN ATLAS</p>
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="flex flex-col items-center gap-2">
+        <svg class="w-6 h-6 text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        <p class="text-2xl font-extrabold">+120</p>
+        <p class="text-sm text-slate-500">Proyectos entregados</p>
+      </div>
+      <div class="flex flex-col items-center gap-2">
+        <svg class="w-6 h-6 text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0H5m14 0h2M5 21H3m6-14h.01M9 11h.01M9 15h.01M13 7h.01M13 11h.01M13 15h.01"/></svg>
+        <p class="text-2xl font-extrabold">+40</p>
+        <p class="text-sm text-slate-500">Empresas transformadas</p>
+      </div>
+      <div class="flex flex-col items-center gap-2">
+        <svg class="w-6 h-6 text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 7v5l3 3"/></svg>
+        <p class="text-2xl font-extrabold">+85%</p>
+        <p class="text-sm text-slate-500">Tiempo ahorrado en procesos</p>
+      </div>
+      <div class="flex flex-col items-center gap-2">
+        <svg class="w-6 h-6 text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        <p class="text-2xl font-extrabold">+99.9%</p>
+        <p class="text-sm text-slate-500">Disponibilidad de sistemas</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Casos de éxito -->
+<section id="casos" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+  <p class="text-brand-600 text-sm font-semibold tracking-wide text-center mb-10">CASOS REALES, RESULTADOS REALES</p>
+
+  <div class="grid lg:grid-cols-2 gap-10 items-center mb-14">
+    <img src="https://placehold.co/420x300/eaf1ff/2f6feb?text=Atlas+en+laptop" alt="Atlas trabajando" class="rounded-2xl w-full max-w-md mx-auto">
+    <div>
+      <svg class="w-8 h-8 text-brand-200 mb-4" viewBox="0 0 24 24" fill="currentColor"><path d="M7.17 6A5.17 5.17 0 002 11.17V18h6.83v-6.83H5.5a2.83 2.83 0 012.83-2.83V6zm10 0a5.17 5.17 0 00-5.17 5.17V18H19v-6.83h-3.33a2.83 2.83 0 012.83-2.83V6z"/></svg>
+      <p class="text-xl sm:text-2xl font-semibold text-slate-800 leading-snug mb-6">
+        "Atlas automatizó nuestro proceso de atención al cliente y redujimos el tiempo de respuesta en un 70%. Ahora podemos enfocarnos en lo que realmente importa: nuestros clientes."
+      </p>
+      <p class="font-bold">María Fernanda López</p>
+      <p class="text-sm text-slate-500 mb-4">Gerente General, Clínica Vital</p>
+      <div class="flex gap-1.5">
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-600"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-slate-200"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-slate-200"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-slate-200"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-6 text-slate-400 font-bold">
+    <span class="flex items-center gap-2 text-slate-700"><svg class="w-5 h-5 text-red-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7-4.35-9.5-8.5C.5 8.5 3 5 6.5 5c2 0 3.5 1.5 4.5 3 1-1.5 2.5-3 4.5-3 3.5 0 6 3.5 4 7.5C19 16.65 12 21 12 21z"/></svg>Clínica Vital</span>
+    <span class="text-slate-700">CREA <span class="font-normal text-xs align-top">STUDIO</span></span>
+    <span class="flex items-center gap-2 text-slate-700"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M3 21h18v-2H3v2zM5 19h2v-6H5v6zm4 0h2V9H9v10zm4 0h2v-8h-2v8zm4 0h2V6h-2v13z"/></svg>CONSTRUCTORA HORIZONTE</span>
+    <span class="flex items-center gap-2 text-slate-700"><svg class="w-5 h-5 text-green-500" viewBox="0 0 24 24" fill="currentColor"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17 1.05.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z"/></svg>GREEN</span>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="relative overflow-hidden bg-slate-900 text-white py-20">
+  <div class="absolute right-0 bottom-0 w-64 h-64 opacity-30">
+    <img src="https://placehold.co/300x300/1e293b/64748b?text=%2B" class="w-full h-full object-cover">
+  </div>
+  <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-4">¿Listo para transformar tu negocio?</h2>
+    <p class="text-slate-300 mb-8">Hablemos sobre tu proyecto y encontremos la mejor solución juntos.</p>
+    <a href="#" class="inline-flex items-center justify-center bg-brand-600 hover:bg-brand-700 text-white font-semibold px-8 py-3.5 rounded-full transition-colors">
+      Hablar con Atlas
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-white pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+      <div class="lg:col-span-1">
+        <a href="#" class="flex items-center gap-2 mb-4">
+          <img src="assets/atlas-logo-icon.png" alt="" class="w-9 h-auto">
+          <span class="leading-tight">
+            <span class="block font-bold text-base tracking-tight">ATLAS</span>
+            <span class="block text-[9px] tracking-[0.2em] text-slate-500 -mt-1">CORPORATION</span>
+          </span>
+        </a>
+        <p class="text-sm text-slate-500">Automatizamos ideas.<br>Construimos el futuro digital.</p>
+        <div class="flex gap-3 mt-4 text-slate-400">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="font-bold text-sm mb-4">NAVEGACIÓN</h4>
+        <ul class="space-y-2.5 text-sm text-slate-500">
+          <li><a href="#" class="hover:text-brand-600">Inicio</a></li>
+          <li><a href="#servicios" class="hover:text-brand-600">Servicios</a></li>
+          <li><a href="#paquetes" class="hover:text-brand-600">Paquetes</a></li>
+          <li><a href="#casos" class="hover:text-brand-600">Casos de Éxito</a></li>
+          <li><a href="#" class="hover:text-brand-600">Nosotros</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-bold text-sm mb-4">RECURSOS</h4>
+        <ul class="space-y-2.5 text-sm text-slate-500">
+          <li><a href="#" class="hover:text-brand-600">Blog</a></li>
+          <li><a href="#" class="hover:text-brand-600">Guías</a></li>
+          <li><a href="#" class="hover:text-brand-600">Preguntas Frecuentes</a></li>
+          <li><a href="#" class="hover:text-brand-600">Atlas Score</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-bold text-sm mb-4">LEGAL</h4>
+        <ul class="space-y-2.5 text-sm text-slate-500">
+          <li><a href="#" class="hover:text-brand-600">Términos y Condiciones</a></li>
+          <li><a href="#" class="hover:text-brand-600">Política de Privacidad</a></li>
+          <li><a href="#" class="hover:text-brand-600">Política de Cookies</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-bold text-sm mb-4">CONTACTO</h4>
+        <ul class="space-y-2.5 text-sm text-slate-500">
+          <li class="flex items-center gap-2">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            hola@atlascorp.com
+          </li>
+          <li class="flex items-center gap-2">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            +57 300 123 4567
+          </li>
+          <li class="flex items-center gap-2">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            Medellín, Colombia
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-slate-100 pt-6 text-center text-sm text-slate-400">
+      © 2026 Atlas Corporation. Todos los derechos reservados.
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var section = document.getElementById('hero');
+  var baseImg = document.getElementById('circuitBaseImg');
+  var canvas = document.getElementById('circuitGlowCanvas');
+  if (!section || !baseImg || !canvas) return;
+
+  var ctx = canvas.getContext('2d');
+  var dpr = Math.min(window.devicePixelRatio || 1, 2);
+  var lineMaskCanvas = null;
+  var revealCanvas = document.createElement('canvas');
+  var revealCtx = revealCanvas.getContext('2d');
+  var brushRadius = 26;
+  var fadeAmount = 0.045;
+  var ready = false;
+
+  function buildLineMask() {
+    var iw = baseImg.naturalWidth, ih = baseImg.naturalHeight;
+    if (!iw || !ih) return;
+    var tmp = document.createElement('canvas');
+    tmp.width = iw;
+    tmp.height = ih;
+    var tctx = tmp.getContext('2d');
+    tctx.drawImage(baseImg, 0, 0, iw, ih);
+    var imgData = tctx.getImageData(0, 0, iw, ih);
+    var d = imgData.data;
+    for (var i = 0; i < d.length; i += 4) {
+      var r = d[i], g = d[i + 1], b = d[i + 2];
+      var dist = 255 - Math.min(r, g, b);
+      var a = 0;
+      if (dist > 12) {
+        a = Math.min(200, (dist - 12) * 5);
+      }
+      d[i] = 96;
+      d[i + 1] = 165;
+      d[i + 2] = 250;
+      d[i + 3] = a;
+    }
+    tctx.putImageData(imgData, 0, 0);
+    lineMaskCanvas = tmp;
+    ready = true;
+  }
+
+  function resize() {
+    var rect = section.getBoundingClientRect();
+    var w = Math.max(1, Math.round(rect.width));
+    var h = Math.max(1, Math.round(rect.height));
+    var newCanvasWidth = w * dpr;
+    var newCanvasHeight = h * dpr;
+
+    // Setting canvas.width/height always clears it, even to the same value —
+    // skip the reset (and the accumulated reveal trail with it) when the
+    // size hasn't actually changed, so spurious "resize" events (scrollbar
+    // showing/hiding, minor layout shifts) don't wipe the drawing.
+    if (canvas.width === newCanvasWidth && canvas.height === newCanvasHeight) {
+      return;
+    }
+
+    var oldReveal = (revealCanvas.width > 0 && revealCanvas.height > 0) ? revealCanvas : null;
+
+    canvas.width = newCanvasWidth;
+    canvas.height = newCanvasHeight;
+    canvas.style.width = w + 'px';
+    canvas.style.height = h + 'px';
+
+    var newReveal = document.createElement('canvas');
+    newReveal.width = newCanvasWidth;
+    newReveal.height = newCanvasHeight;
+    if (oldReveal) {
+      // preserve whatever was already revealed, stretched to the new size
+      newReveal.getContext('2d').drawImage(oldReveal, 0, 0, newCanvasWidth, newCanvasHeight);
+    }
+    revealCanvas = newReveal;
+    revealCtx = newReveal.getContext('2d');
+
+    render();
+  }
+
+  function paintReveal(clientX, clientY) {
+    var rect = canvas.getBoundingClientRect();
+    var x = (clientX - rect.left) * (canvas.width / rect.width);
+    var y = (clientY - rect.top) * (canvas.height / rect.height);
+    var r = brushRadius * dpr;
+
+    var grad = revealCtx.createRadialGradient(x, y, 0, x, y, r);
+    grad.addColorStop(0, 'rgba(255,255,255,0.8)');
+    grad.addColorStop(0.6, 'rgba(255,255,255,0.3)');
+    grad.addColorStop(1, 'rgba(255,255,255,0)');
+    revealCtx.fillStyle = grad;
+    revealCtx.beginPath();
+    revealCtx.arc(x, y, r, 0, Math.PI * 2);
+    revealCtx.fill();
+  }
+
+  function fadeReveal() {
+    revealCtx.save();
+    revealCtx.globalCompositeOperation = 'destination-out';
+    revealCtx.fillStyle = 'rgba(0,0,0,' + fadeAmount + ')';
+    revealCtx.fillRect(0, 0, revealCanvas.width, revealCanvas.height);
+    revealCtx.restore();
+  }
+
+  function loop() {
+    if (ready) {
+      fadeReveal();
+      render();
+    }
+    requestAnimationFrame(loop);
+  }
+
+  function render() {
+    if (!ready || !lineMaskCanvas) return;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    var iw = lineMaskCanvas.width, ih = lineMaskCanvas.height;
+    var cw = canvas.width, ch = canvas.height;
+    var scale = Math.max(cw / iw, ch / ih);
+    var dw = iw * scale, dh = ih * scale;
+    var dx = (cw - dw) / 2, dy = (ch - dh) / 2;
+
+    ctx.save();
+    ctx.drawImage(lineMaskCanvas, dx, dy, dw, dh);
+    ctx.globalCompositeOperation = 'destination-in';
+    ctx.drawImage(revealCanvas, 0, 0);
+    ctx.restore();
+  }
+
+  function onMove(e) {
+    var x, y;
+    if (e.touches && e.touches.length) {
+      x = e.touches[0].clientX;
+      y = e.touches[0].clientY;
+    } else {
+      x = e.clientX;
+      y = e.clientY;
+    }
+    paintReveal(x, y);
+  }
+
+  canvas.style.pointerEvents = 'none';
+  canvas.style.filter = 'drop-shadow(0 0 3px rgba(96,165,250,0.7)) drop-shadow(0 0 6px rgba(59,130,246,0.35))';
+
+  section.addEventListener('mousemove', onMove);
+  section.addEventListener('touchmove', onMove, { passive: true });
+  window.addEventListener('resize', resize);
+  requestAnimationFrame(loop);
+
+  if (baseImg.complete && baseImg.naturalWidth) {
+    buildLineMask();
+    resize();
+  } else {
+    baseImg.addEventListener('load', function () {
+      buildLineMask();
+      resize();
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
