@@ -6,10 +6,10 @@ Landing page de Atlas Corporation: un único archivo `index.html` estático, con
 
 ```
 index.html      Página completa (markup + estilos Tailwind + JS del fondo interactivo)
-*.png, *.jpg    Imágenes usadas por la página (logo, robots, fondo de circuito)
+assets/         Imágenes usadas por la página (logo, robots, fondo de circuito)
 ```
 
-Todas las imágenes viven en la raíz del repo junto a `index.html` (no en una subcarpeta), para que subirlas por la interfaz web de GitHub sea a prueba de errores — arrastrar archivos ahí no conserva subcarpetas.
+> **Si subes cambios por la interfaz web de GitHub** (en vez de `git push`): al arrastrar archivos al área de upload, arrastra la carpeta `assets` completa (el ícono de la carpeta), no los archivos que están dentro de ella — si seleccionas los archivos sueltos, el navegador pierde la subcarpeta y todo termina en la raíz del repo, rompiendo las rutas `assets/...` que usa `index.html`.
 
 ## Desarrollo local
 
