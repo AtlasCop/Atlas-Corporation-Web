@@ -420,6 +420,58 @@
 
 </div>
 
+<!-- WhatsApp Widget -->
+<div class="fixed bottom-5 right-5 z-40 flex flex-col items-end gap-3">
+  <div id="whatsappPanel" class="hidden flex-col gap-1 bg-white rounded-2xl shadow-2xl border border-slate-200 p-3 w-72 sm:w-80">
+    <div class="flex items-center justify-between px-1 pb-2 mb-1 border-b border-slate-100">
+      <p class="text-sm font-bold text-slate-800">Escríbenos por WhatsApp</p>
+      <button id="whatsappClose" aria-label="Cerrar" class="text-slate-400 hover:text-slate-600 p-1">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <a href="https://wa.me/573007493334?text=Hola%2C%20quiero%20más%20información%20sobre%20Atlas%20Corporation" target="_blank" rel="noopener" class="flex items-center gap-3 p-2 rounded-xl hover:bg-slate-50 transition-colors">
+      <img src="assets/team-johan.jpg" alt="Johan Castañeda" class="w-11 h-11 rounded-full object-cover shrink-0">
+      <span class="min-w-0">
+        <span class="block text-sm font-semibold text-slate-800 truncate">Johan Castañeda</span>
+        <span class="block text-xs text-slate-500">+57 300 749 3334</span>
+      </span>
+      <svg class="w-5 h-5 text-green-500 ml-auto shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M12.001 2c-5.523 0-10 4.477-10 10 0 1.768.462 3.428 1.268 4.868L2 22l5.264-1.246A9.94 9.94 0 0012 22c5.523 0 10-4.477 10-10S17.524 2 12.001 2zm0 18.117c-1.588 0-3.115-.427-4.443-1.234l-.318-.19-3.13.74.75-3.09-.207-.323A7.985 7.985 0 014 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8z"/><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+    </a>
+    <a href="https://wa.me/573045591761?text=Hola%2C%20quiero%20más%20información%20sobre%20Atlas%20Corporation" target="_blank" rel="noopener" class="flex items-center gap-3 p-2 rounded-xl hover:bg-slate-50 transition-colors">
+      <img src="assets/team-mariana.jpg" alt="Mariana Carvajal Soto" class="w-11 h-11 rounded-full object-cover shrink-0">
+      <span class="min-w-0">
+        <span class="block text-sm font-semibold text-slate-800 truncate">Mariana Carvajal Soto</span>
+        <span class="block text-xs text-slate-500">+57 304 559 1761</span>
+      </span>
+      <svg class="w-5 h-5 text-green-500 ml-auto shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M12.001 2c-5.523 0-10 4.477-10 10 0 1.768.462 3.428 1.268 4.868L2 22l5.264-1.246A9.94 9.94 0 0012 22c5.523 0 10-4.477 10-10S17.524 2 12.001 2zm0 18.117c-1.588 0-3.115-.427-4.443-1.234l-.318-.19-3.13.74.75-3.09-.207-.323A7.985 7.985 0 014 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8z"/><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+    </a>
+  </div>
+
+  <button id="whatsappToggle" aria-label="Chatear por WhatsApp" class="w-14 h-14 rounded-full bg-green-500 hover:bg-green-600 shadow-lg hover:shadow-xl flex items-center justify-center transition-all hover:scale-105">
+    <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M12.001 2c-5.523 0-10 4.477-10 10 0 1.768.462 3.428 1.268 4.868L2 22l5.264-1.246A9.94 9.94 0 0012 22c5.523 0 10-4.477 10-10S17.524 2 12.001 2zm0 18.117c-1.588 0-3.115-.427-4.443-1.234l-.318-.19-3.13.74.75-3.09-.207-.323A7.985 7.985 0 014 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8z"/><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+  </button>
+</div>
+<script>
+(function () {
+  var waToggle = document.getElementById('whatsappToggle');
+  var waPanel = document.getElementById('whatsappPanel');
+  var waClose = document.getElementById('whatsappClose');
+  if (waToggle && waPanel) {
+    waToggle.addEventListener('click', function () {
+      var isHidden = waPanel.classList.contains('hidden');
+      waPanel.classList.toggle('hidden', !isHidden);
+      waPanel.classList.toggle('flex', isHidden);
+    });
+  }
+  if (waClose && waPanel) {
+    waClose.addEventListener('click', function () {
+      waPanel.classList.add('hidden');
+      waPanel.classList.remove('flex');
+    });
+  }
+})();
+</script>
+
 <script>
 (function () {
   var loader = document.getElementById('pageLoader');
