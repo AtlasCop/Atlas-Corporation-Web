@@ -389,7 +389,7 @@
         <ul class="space-y-2.5 text-sm text-slate-500">
           <li><a href="#" class="hover:text-brand-600">Términos y Condiciones</a></li>
           <li><a href="politica-privacidad.html" class="hover:text-brand-600">Política de Privacidad</a></li>
-          <li><a href="#" class="hover:text-brand-600">Política de Cookies</a></li>
+          <li><a href="politica-cookies.html" class="hover:text-brand-600">Política de Cookies</a></li>
         </ul>
       </div>
 
@@ -469,6 +469,43 @@
       waPanel.classList.remove('flex');
     });
   }
+})();
+</script>
+
+<!-- Cookie Consent Banner -->
+<div id="cookieBanner" class="hidden fixed bottom-24 sm:bottom-5 left-5 right-5 sm:right-auto z-40 max-w-sm">
+  <div class="bg-white rounded-2xl shadow-2xl border border-slate-200 p-5">
+    <div class="flex items-start gap-3 mb-3">
+      <div class="w-9 h-9 rounded-xl bg-brand-50 flex items-center justify-center shrink-0">
+        <svg class="w-5 h-5 text-brand-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="9" r="1" fill="currentColor" stroke="none"/><circle cx="14.5" cy="8" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="13.5" r="1" fill="currentColor" stroke="none"/><circle cx="9" cy="14.5" r="1" fill="currentColor" stroke="none"/><circle cx="12.5" cy="17" r="1" fill="currentColor" stroke="none"/></svg>
+      </div>
+      <p class="text-sm font-bold text-slate-800 pt-1.5">Uso de cookies</p>
+    </div>
+    <p class="text-sm text-slate-600 leading-relaxed mb-4">Usamos cookies propias para el correcto funcionamiento del sitio. Puedes aceptarlas, rechazarlas o conocer más en nuestra <a href="politica-cookies.html" class="text-brand-600 font-semibold hover:underline">Política de Cookies</a>.</p>
+    <div class="flex gap-2">
+      <button id="cookieReject" class="flex-1 border border-slate-300 hover:border-slate-400 text-slate-700 text-sm font-semibold px-4 py-2.5 rounded-full transition-colors">Rechazar</button>
+      <button id="cookieAccept" class="flex-1 bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold px-4 py-2.5 rounded-full transition-colors">Aceptar</button>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  var KEY = 'atlas_cookie_consent';
+  var banner = document.getElementById('cookieBanner');
+  if (!banner) return;
+  var already;
+  try { already = localStorage.getItem(KEY); } catch (e) { already = null; }
+  if (!already) {
+    banner.classList.remove('hidden');
+  }
+  function decide(value) {
+    try { localStorage.setItem(KEY, value); } catch (e) {}
+    banner.classList.add('hidden');
+  }
+  var acceptBtn = document.getElementById('cookieAccept');
+  var rejectBtn = document.getElementById('cookieReject');
+  if (acceptBtn) acceptBtn.addEventListener('click', function () { decide('accepted'); });
+  if (rejectBtn) rejectBtn.addEventListener('click', function () { decide('rejected'); });
 })();
 </script>
 
