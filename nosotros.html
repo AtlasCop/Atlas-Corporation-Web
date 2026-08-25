@@ -50,7 +50,7 @@
       </button>
     </nav>
 
-    <a href="index.html#hero" class="hidden sm:inline-flex items-center bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors">
+    <a href="#" class="js-open-contact hidden sm:inline-flex items-center bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors">
       Hablar con Atlas
     </a>
 
@@ -211,7 +211,7 @@
     <div class="text-center lg:text-left order-2">
       <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-4">¿Listo para transformar tu negocio?</h2>
       <p class="text-slate-600 mb-8">Hablemos sobre tu proyecto y encontremos la mejor solución juntos.</p>
-      <a href="index.html#hero" class="inline-flex items-center justify-center bg-brand-600 hover:bg-brand-700 text-white font-semibold px-8 py-3.5 rounded-full transition-colors">
+      <a href="#" class="js-open-contact inline-flex items-center justify-center bg-brand-600 hover:bg-brand-700 text-white font-semibold px-8 py-3.5 rounded-full transition-colors">
         Hablar con Atlas
       </a>
     </div>
@@ -382,6 +382,141 @@
   var rejectBtn = document.getElementById('cookieReject');
   if (acceptBtn) acceptBtn.addEventListener('click', function () { decide('accepted'); });
   if (rejectBtn) rejectBtn.addEventListener('click', function () { decide('rejected'); });
+})();
+</script>
+
+<!-- Contact Modal -->
+<div id="contactModal" class="hidden fixed inset-0 z-[60] items-center justify-center p-4">
+  <div id="contactModalOverlay" class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"></div>
+  <div class="relative bg-white rounded-3xl shadow-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto">
+    <div class="flex items-center justify-between px-6 sm:px-8 pt-6 sm:pt-8 pb-4">
+      <div>
+        <p class="text-brand-600 text-xs font-semibold tracking-wide mb-1">HABLEMOS</p>
+        <h3 class="text-xl font-extrabold tracking-tight">Cuéntanos tu proyecto</h3>
+      </div>
+      <button id="contactModalClose" aria-label="Cerrar" type="button" class="text-slate-400 hover:text-slate-600 p-1.5 rounded-full hover:bg-slate-100 transition-colors">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <form id="contactForm" class="px-6 sm:px-8 pb-8 space-y-4">
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div>
+          <label for="cf-nombre" class="block text-sm font-semibold text-slate-700 mb-1.5">Nombre</label>
+          <input id="cf-nombre" name="nombre" type="text" required class="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent">
+        </div>
+        <div>
+          <label for="cf-apellidos" class="block text-sm font-semibold text-slate-700 mb-1.5">Apellidos</label>
+          <input id="cf-apellidos" name="apellidos" type="text" required class="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent">
+        </div>
+      </div>
+
+      <div>
+        <label for="cf-empresa" class="block text-sm font-semibold text-slate-700 mb-1.5">Empresa <span class="font-normal text-slate-400">(opcional)</span></label>
+        <input id="cf-empresa" name="empresa" type="text" class="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent">
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div>
+          <label for="cf-tipo-doc" class="block text-sm font-semibold text-slate-700 mb-1.5">Tipo de documento</label>
+          <select id="cf-tipo-doc" name="tipoDocumento" required class="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent bg-white">
+            <option value="">Selecciona...</option>
+            <option>Cédula de ciudadanía</option>
+            <option>Cédula de extranjería</option>
+            <option>NIT</option>
+            <option>Pasaporte</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div>
+          <label for="cf-documento" class="block text-sm font-semibold text-slate-700 mb-1.5">Número de documento</label>
+          <input id="cf-documento" name="documento" type="text" required class="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent">
+        </div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div>
+          <label for="cf-correo" class="block text-sm font-semibold text-slate-700 mb-1.5">Correo de contacto</label>
+          <input id="cf-correo" name="correo" type="email" required class="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent">
+        </div>
+        <div>
+          <label for="cf-telefono" class="block text-sm font-semibold text-slate-700 mb-1.5">Número de contacto</label>
+          <input id="cf-telefono" name="telefono" type="tel" required class="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent">
+        </div>
+      </div>
+
+      <div>
+        <label for="cf-requerimiento" class="block text-sm font-semibold text-slate-700 mb-1.5">Requerimiento</label>
+        <textarea id="cf-requerimiento" name="requerimiento" rows="4" required class="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent resize-none"></textarea>
+      </div>
+
+      <button type="submit" class="w-full inline-flex items-center justify-center bg-brand-600 hover:bg-brand-700 text-white font-semibold px-6 py-3.5 rounded-full transition-colors">
+        Enviar solicitud
+      </button>
+      <p class="text-xs text-slate-400 text-center">Al enviar, se abrirá tu aplicación de correo con la solicitud ya redactada hacia hola@atlascorp.com.</p>
+    </form>
+  </div>
+</div>
+<script>
+(function () {
+  var openers = document.querySelectorAll('.js-open-contact');
+  var modal = document.getElementById('contactModal');
+  var overlay = document.getElementById('contactModalOverlay');
+  var closeBtn = document.getElementById('contactModalClose');
+  var form = document.getElementById('contactForm');
+  if (!modal) return;
+
+  function openModal(e) {
+    if (e) e.preventDefault();
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.documentElement.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.documentElement.style.overflow = '';
+  }
+  openers.forEach(function (el) { el.addEventListener('click', openModal); });
+  if (overlay) overlay.addEventListener('click', closeModal);
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+  });
+
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var data = new FormData(form);
+      var get = function (key) { return (data.get(key) || '').toString().trim(); };
+      var nombre = get('nombre');
+      var apellidos = get('apellidos');
+      var empresa = get('empresa');
+      var tipoDocumento = get('tipoDocumento');
+      var documento = get('documento');
+      var correo = get('correo');
+      var telefono = get('telefono');
+      var requerimiento = get('requerimiento');
+
+      var lines = [
+        'Nueva solicitud desde el sitio web de Atlas Corporation',
+        '',
+        'Nombre completo: ' + nombre + ' ' + apellidos,
+        'Empresa: ' + (empresa || 'No indica'),
+        'Tipo de documento: ' + tipoDocumento,
+        'Número de documento: ' + documento,
+        'Correo de contacto: ' + correo,
+        'Número de contacto: ' + telefono,
+        '',
+        'Requerimiento:',
+        requerimiento
+      ];
+      var subject = encodeURIComponent('Nueva solicitud de contacto - ' + nombre + ' ' + apellidos);
+      var body = encodeURIComponent(lines.join('\n'));
+      window.location.href = 'mailto:hola@atlascorp.com?subject=' + subject + '&body=' + body;
+      closeModal();
+      form.reset();
+    });
+  }
 })();
 </script>
 
