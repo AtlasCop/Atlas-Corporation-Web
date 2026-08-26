@@ -88,16 +88,25 @@
           <th class="px-4 py-5 w-1/4">
             <span class="inline-flex items-center gap-2 justify-center w-full font-bold text-green-700">
               <span class="w-2.5 h-2.5 rounded-full bg-green-500"></span> START
+              <button type="button" class="js-open-notincluded text-amber-500 hover:text-amber-600" aria-label="Ver qué no está incluido">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg>
+              </button>
             </span>
           </th>
           <th class="px-4 py-5 w-1/4 bg-brand-50/60">
             <span class="inline-flex items-center gap-2 justify-center w-full font-bold text-brand-700">
               <span class="w-2.5 h-2.5 rounded-full bg-brand-600"></span> BUSINESS
+              <button type="button" class="js-open-notincluded text-amber-500 hover:text-amber-600" aria-label="Ver qué no está incluido">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg>
+              </button>
             </span>
           </th>
           <th class="px-4 py-5 w-1/4">
             <span class="inline-flex items-center gap-2 justify-center w-full font-bold text-purple-700">
               <span class="w-2.5 h-2.5 rounded-full bg-purple-600"></span> ENTERPRISE
+              <button type="button" class="js-open-notincluded text-amber-500 hover:text-amber-600" aria-label="Ver qué no está incluido">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg>
+              </button>
             </span>
           </th>
         </tr>
@@ -492,6 +501,72 @@
       form.reset();
     });
   }
+})();
+</script>
+
+<!-- Qué no está incluido Modal -->
+<div id="notIncludedModal" class="hidden fixed inset-0 z-[60] items-center justify-center p-4">
+  <div id="notIncludedModalOverlay" class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"></div>
+  <div class="relative bg-white rounded-3xl shadow-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto">
+    <div class="flex items-center justify-between px-6 sm:px-8 pt-6 sm:pt-8 pb-4">
+      <div class="flex items-center gap-3">
+        <span class="shrink-0 w-9 h-9 rounded-full bg-amber-50 text-amber-500 flex items-center justify-center">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg>
+        </span>
+        <h3 class="text-lg font-extrabold tracking-tight">¿Qué no está incluido?</h3>
+      </div>
+      <button id="notIncludedModalClose" aria-label="Cerrar" type="button" class="text-slate-400 hover:text-slate-600 p-1.5 rounded-full hover:bg-slate-100 transition-colors shrink-0">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="px-6 sm:px-8 pb-8">
+      <p class="text-slate-600 leading-relaxed mb-1">Esto debe aparecer explícitamente en todas las propuestas.</p>
+      <p class="text-slate-600 leading-relaxed mb-4">Salvo que se cotice expresamente, no están incluidos:</p>
+      <ul class="list-disc pl-5 space-y-1.5 text-sm text-slate-600">
+        <li>Dominio después del primer período incluido.</li>
+        <li>Hosting después del período incluido.</li>
+        <li>Licencias de terceros.</li>
+        <li>Consumo de APIs.</li>
+        <li>Costos de Meta/WhatsApp.</li>
+        <li>Consumo de modelos de IA.</li>
+        <li>Fotografía profesional.</li>
+        <li>Producción audiovisual.</li>
+        <li>Redacción extensa de contenidos.</li>
+        <li>Traducciones.</li>
+        <li>Publicidad digital.</li>
+        <li>SEO mensual.</li>
+        <li>Desarrollo de aplicaciones móviles.</li>
+        <li>Software no contemplado en el alcance.</li>
+        <li>Nuevas funcionalidades solicitadas después de aprobar el alcance.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  var openers = document.querySelectorAll('.js-open-notincluded');
+  var modal = document.getElementById('notIncludedModal');
+  var overlay = document.getElementById('notIncludedModalOverlay');
+  var closeBtn = document.getElementById('notIncludedModalClose');
+  if (!modal || !openers.length) return;
+
+  function openModal(e) {
+    if (e) e.preventDefault();
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.documentElement.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.documentElement.style.overflow = '';
+  }
+  openers.forEach(function (el) { el.addEventListener('click', openModal); });
+  if (overlay) overlay.addEventListener('click', closeModal);
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+  });
 })();
 </script>
 
