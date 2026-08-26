@@ -208,7 +208,7 @@
       </div>
       <h3 class="font-bold mb-2 transition-colors group-hover:text-brand-600">Desarrollo Web</h3>
       <p class="text-sm text-slate-500 mb-4">Páginas y plataformas web modernas, rápidas y adaptadas a tu negocio.</p>
-      <a href="#" class="inline-flex items-center gap-1 text-sm font-semibold text-brand-600">Saber más <span class="transition-transform duration-300 group-hover:translate-x-1">→</span></a>
+      <a href="#" class="js-open-webinfo inline-flex items-center gap-1 text-sm font-semibold text-brand-600">Saber más <span class="transition-transform duration-300 group-hover:translate-x-1">→</span></a>
     </div>
     <div class="group relative border border-slate-200 rounded-2xl p-6 overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:border-purple-300 hover:shadow-xl hover:shadow-purple-100">
       <div class="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-purple-500 transition-transform duration-300 group-hover:scale-x-100"></div>
@@ -479,6 +479,98 @@
       waPanel.classList.remove('flex');
     });
   }
+})();
+</script>
+
+<!-- Desarrollo Web Info Modal -->
+<div id="webInfoModal" class="hidden fixed inset-0 z-[60] items-center justify-center p-4">
+  <div id="webInfoModalOverlay" class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"></div>
+  <div class="relative bg-white rounded-3xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+    <div class="flex items-center justify-between px-6 sm:px-8 pt-6 sm:pt-8 pb-5">
+      <div class="flex items-center gap-3">
+        <span class="shrink-0 w-11 h-11 rounded-2xl bg-gradient-to-br from-brand-50 to-brand-100 text-brand-600 flex items-center justify-center">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5h18M5 5h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2z"/></svg>
+        </span>
+        <div>
+          <p class="text-brand-600 text-xs font-semibold tracking-wide mb-0.5">DESARROLLO WEB</p>
+          <h3 class="text-xl font-extrabold tracking-tight">Elige el nivel para tu proyecto</h3>
+        </div>
+      </div>
+      <button id="webInfoModalClose" aria-label="Cerrar" type="button" class="text-slate-400 hover:text-slate-600 p-1.5 rounded-full hover:bg-slate-100 transition-colors shrink-0">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="px-6 sm:px-8 pb-8 grid sm:grid-cols-3 gap-4">
+      <div class="group relative border border-slate-200 rounded-2xl p-5 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-emerald-300 hover:shadow-lg hover:shadow-emerald-100">
+        <div class="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-emerald-500 to-teal-400"></div>
+        <div class="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110">
+          <svg class="w-5 h-5 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        </div>
+        <h4 class="font-bold mb-3">Web Básica</h4>
+        <ul class="space-y-2 text-sm text-slate-600">
+          <li class="flex gap-2"><span class="text-emerald-600">✓</span>Landing pages</li>
+          <li class="flex gap-2"><span class="text-emerald-600">✓</span>Páginas corporativas</li>
+          <li class="flex gap-2"><span class="text-emerald-600">✓</span>Portafolios</li>
+          <li class="flex gap-2"><span class="text-emerald-600">✓</span>Páginas informativas</li>
+        </ul>
+      </div>
+      <div class="group relative border border-slate-200 rounded-2xl p-5 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg hover:shadow-brand-100">
+        <div class="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-brand-500 to-blue-400"></div>
+        <div class="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110">
+          <svg class="w-5 h-5 text-brand-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m-8 4a2 2 0 104 0 2 2 0 00-4 0zm8 0a2 2 0 104 0 2 2 0 00-4 0z"/></svg>
+        </div>
+        <h4 class="font-bold mb-3">Web Comercial</h4>
+        <ul class="space-y-2 text-sm text-slate-600">
+          <li class="flex gap-2"><span class="text-brand-600">✓</span>Catálogos</li>
+          <li class="flex gap-2"><span class="text-brand-600">✓</span>E-commerce</li>
+          <li class="flex gap-2"><span class="text-brand-600">✓</span>Formularios</li>
+          <li class="flex gap-2"><span class="text-brand-600">✓</span>Reservas</li>
+          <li class="flex gap-2"><span class="text-brand-600">✓</span>Integración con WhatsApp</li>
+          <li class="flex gap-2"><span class="text-brand-600">✓</span>Pagos</li>
+        </ul>
+      </div>
+      <div class="group relative border border-slate-200 rounded-2xl p-5 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-purple-300 hover:shadow-lg hover:shadow-purple-100">
+        <div class="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-purple-500 to-fuchsia-400"></div>
+        <div class="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110">
+          <svg class="w-5 h-5 text-purple-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0H5m14 0h2M5 21H3m6-14h.01M9 11h.01M9 15h.01M13 7h.01M13 11h.01M13 15h.01"/></svg>
+        </div>
+        <h4 class="font-bold mb-3">Web Empresarial</h4>
+        <ul class="space-y-2 text-sm text-slate-600">
+          <li class="flex gap-2"><span class="text-purple-600">✓</span>Portales privados</li>
+          <li class="flex gap-2"><span class="text-purple-600">✓</span>Sistemas de clientes</li>
+          <li class="flex gap-2"><span class="text-purple-600">✓</span>Dashboards</li>
+          <li class="flex gap-2"><span class="text-purple-600">✓</span>Intranets</li>
+          <li class="flex gap-2"><span class="text-purple-600">✓</span>Plataformas de gestión</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  var openers = document.querySelectorAll('.js-open-webinfo');
+  var modal = document.getElementById('webInfoModal');
+  var overlay = document.getElementById('webInfoModalOverlay');
+  var closeBtn = document.getElementById('webInfoModalClose');
+  if (!modal || !openers.length) return;
+
+  function openModal(e) {
+    if (e) e.preventDefault();
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.documentElement.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.documentElement.style.overflow = '';
+  }
+  openers.forEach(function (el) { el.addEventListener('click', openModal); });
+  if (overlay) overlay.addEventListener('click', closeModal);
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+  });
 })();
 </script>
 
