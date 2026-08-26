@@ -235,7 +235,7 @@
       </div>
       <h3 class="font-bold mb-2 transition-colors group-hover:text-amber-600">Integraciones</h3>
       <p class="text-sm text-slate-500 mb-4">Conectamos tus herramientas y sistemas para que trabajen juntos.</p>
-      <a href="#" class="inline-flex items-center gap-1 text-sm font-semibold text-amber-600">Saber más <span class="transition-transform duration-300 group-hover:translate-x-1">→</span></a>
+      <a href="#" class="js-open-integrationsinfo inline-flex items-center gap-1 text-sm font-semibold text-amber-600">Saber más <span class="transition-transform duration-300 group-hover:translate-x-1">→</span></a>
     </div>
     <div class="group relative border border-slate-200 rounded-2xl p-6 overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:border-emerald-300 hover:shadow-xl hover:shadow-emerald-100">
       <div class="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-emerald-500 transition-transform duration-300 group-hover:scale-x-100"></div>
@@ -818,6 +818,111 @@
   var modal = document.getElementById('dataInfoModal');
   var overlay = document.getElementById('dataInfoModalOverlay');
   var closeBtn = document.getElementById('dataInfoModalClose');
+  if (!modal || !openers.length) return;
+
+  function openModal(e) {
+    if (e) e.preventDefault();
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.documentElement.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.documentElement.style.overflow = '';
+  }
+  openers.forEach(function (el) { el.addEventListener('click', openModal); });
+  if (overlay) overlay.addEventListener('click', closeModal);
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+  });
+})();
+</script>
+
+<!-- Integraciones Info Modal -->
+<div id="integrationsInfoModal" class="hidden fixed inset-0 z-[60] items-center justify-center p-4">
+  <div id="integrationsInfoModalOverlay" class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"></div>
+  <div class="relative bg-white rounded-3xl shadow-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto">
+    <div class="flex items-center justify-between px-6 sm:px-8 pt-6 sm:pt-8 pb-5">
+      <div class="flex items-center gap-3">
+        <span class="shrink-0 w-11 h-11 rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100 text-amber-600 flex items-center justify-center">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path stroke-linecap="round" d="M8 7l7.5 9.5M16 7L9 16"/></svg>
+        </span>
+        <div>
+          <p class="text-amber-600 text-xs font-semibold tracking-wide mb-0.5">INTEGRACIONES</p>
+          <h3 class="text-xl font-extrabold tracking-tight">Conectamos tus herramientas</h3>
+        </div>
+      </div>
+      <button id="integrationsInfoModalClose" aria-label="Cerrar" type="button" class="text-slate-400 hover:text-slate-600 p-1.5 rounded-full hover:bg-slate-100 transition-colors shrink-0">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="px-6 sm:px-8 pb-8">
+      <p class="text-sm text-slate-500 mb-3">Muchas empresas tienen:</p>
+      <div class="flex flex-wrap items-center gap-2 mb-4">
+        <span class="inline-flex items-center bg-amber-50 text-amber-700 text-xs font-bold px-3 py-1.5 rounded-full">WhatsApp</span>
+        <span class="text-slate-300 font-bold">+</span>
+        <span class="inline-flex items-center bg-amber-50 text-amber-700 text-xs font-bold px-3 py-1.5 rounded-full">Excel</span>
+        <span class="text-slate-300 font-bold">+</span>
+        <span class="inline-flex items-center bg-amber-50 text-amber-700 text-xs font-bold px-3 py-1.5 rounded-full">CRM</span>
+        <span class="text-slate-300 font-bold">+</span>
+        <span class="inline-flex items-center bg-amber-50 text-amber-700 text-xs font-bold px-3 py-1.5 rounded-full">Correo</span>
+        <span class="text-slate-300 font-bold">+</span>
+        <span class="inline-flex items-center bg-amber-50 text-amber-700 text-xs font-bold px-3 py-1.5 rounded-full">Página web</span>
+        <span class="text-slate-300 font-bold">+</span>
+        <span class="inline-flex items-center bg-amber-50 text-amber-700 text-xs font-bold px-3 py-1.5 rounded-full">ERP</span>
+      </div>
+      <p class="text-sm text-slate-500 mb-5">pero ninguno conversa correctamente con los demás.</p>
+
+      <div class="flex items-center gap-3 bg-amber-50 border border-amber-200 rounded-2xl px-5 py-4 mb-6">
+        <svg class="w-5 h-5 text-amber-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        <p class="font-bold text-slate-800">Atlas conecta las herramientas.</p>
+      </div>
+
+      <p class="text-xs font-bold tracking-[0.2em] text-amber-500 mb-4">EJEMPLO</p>
+
+      <ol class="relative border-l-2 border-amber-200 ml-3 space-y-5">
+        <li class="pl-6 relative">
+          <span class="absolute -left-[7px] top-1 w-3 h-3 rounded-full bg-amber-500 ring-4 ring-white"></span>
+          <p class="text-sm font-medium text-slate-700">Cliente llena formulario</p>
+        </li>
+        <li class="pl-6 relative">
+          <span class="absolute -left-[7px] top-1 w-3 h-3 rounded-full bg-amber-500 ring-4 ring-white"></span>
+          <p class="text-sm font-medium text-slate-700">Sistema registra cliente</p>
+        </li>
+        <li class="pl-6 relative">
+          <span class="absolute -left-[7px] top-1 w-3 h-3 rounded-full bg-amber-500 ring-4 ring-white"></span>
+          <p class="text-sm font-medium text-slate-700">Se genera cotización</p>
+        </li>
+        <li class="pl-6 relative">
+          <span class="absolute -left-[7px] top-1 w-3 h-3 rounded-full bg-amber-500 ring-4 ring-white"></span>
+          <p class="text-sm font-medium text-slate-700">Se envía correo</p>
+        </li>
+        <li class="pl-6 relative">
+          <span class="absolute -left-[7px] top-1 w-3 h-3 rounded-full bg-amber-500 ring-4 ring-white"></span>
+          <p class="text-sm font-medium text-slate-700">Se notifica al vendedor</p>
+        </li>
+        <li class="pl-6 relative">
+          <span class="absolute -left-[7px] top-1 w-3 h-3 rounded-full bg-amber-500 ring-4 ring-white"></span>
+          <p class="text-sm font-medium text-slate-700">Se actualiza CRM</p>
+        </li>
+        <li class="pl-6 relative">
+          <span class="absolute -left-[7px] top-1 w-3 h-3 rounded-full bg-amber-500 ring-4 ring-white"></span>
+          <p class="text-sm font-medium text-slate-700">Se genera seguimiento</p>
+        </li>
+      </ol>
+
+      <p class="text-center font-extrabold text-amber-600 mt-6">Todo automáticamente.</p>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  var openers = document.querySelectorAll('.js-open-integrationsinfo');
+  var modal = document.getElementById('integrationsInfoModal');
+  var overlay = document.getElementById('integrationsInfoModalOverlay');
+  var closeBtn = document.getElementById('integrationsInfoModalClose');
   if (!modal || !openers.length) return;
 
   function openModal(e) {
