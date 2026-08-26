@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comparativo de Planes — Atlas Corporation</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            50: '#eef4ff',
+            100: '#dbe7ff',
+            500: '#2f6feb',
+            600: '#2563eb',
+            700: '#1d4ed8',
+          }
+        }
+      }
+    }
+  }
+</script>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+</style>
+</head>
+<body class="bg-white text-slate-900 antialiased">
+
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2 shrink-0">
+      <img src="assets/atlas-logo-icon.png" alt="" class="w-10 h-auto">
+      <span class="leading-tight">
+        <span class="block font-bold text-lg tracking-tight">ATLAS</span>
+        <span class="block text-[10px] tracking-[0.2em] text-slate-500 -mt-1">CORPORATION</span>
+      </span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-700">
+      <a href="index.html" class="hover:text-brand-600">Inicio</a>
+      <a href="index.html#servicios" class="hover:text-brand-600">Servicios</a>
+      <a href="index.html#paquetes" class="hover:text-brand-600">Paquetes</a>
+      <a href="nosotros.html" class="hover:text-brand-600">Nosotros</a>
+      <button class="flex items-center gap-1 hover:text-brand-600">
+        Recursos
+        <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0l-4.24-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+      </button>
+    </nav>
+
+    <div class="hidden sm:flex items-center gap-3">
+      <a href="diagnostico.html" class="inline-flex items-center bg-white border border-blue-300 hover:border-brand-500 text-brand-600 text-sm font-semibold px-5 py-2.5 rounded-full transition-colors">
+        Haz tu diagnóstico
+      </a>
+      <a href="#" class="js-open-contact inline-flex items-center bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors">
+        Hablar con Atlas
+      </a>
+    </div>
+
+    <button class="lg:hidden p-2 -mr-2" aria-label="Menu">
+      <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- Intro -->
+<section class="relative overflow-hidden py-14 sm:py-16 text-center">
+  <div class="absolute inset-0 -z-10 bg-white">
+    <img src="assets/circuit-bg.jpg" alt="" class="w-full h-full object-cover opacity-20">
+    <div class="absolute inset-0 bg-gradient-to-b from-white via-white/80 to-white"></div>
+  </div>
+  <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+    <p class="text-brand-600 text-sm font-semibold tracking-wide mb-3">COMPARATIVO ATLAS</p>
+    <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-4">Compara nuestros planes en detalle</h1>
+    <p class="text-slate-500">Todo lo que incluye cada paquete, en una sola vista, para que elijas el que mejor se ajusta a tu negocio.</p>
+  </div>
+</section>
+
+<div class="px-4 sm:px-6 lg:px-8">
+  <div class="h-px max-w-4xl mx-auto bg-gradient-to-r from-transparent via-blue-300 to-transparent opacity-70 blur-[1.5px]"></div>
+</div>
+
+<!-- Tabla comparativa -->
+<section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
+  <div class="overflow-x-auto border border-slate-200 rounded-2xl shadow-sm">
+    <table class="w-full min-w-[720px] border-collapse text-sm">
+      <thead>
+        <tr class="border-b border-slate-200">
+          <th class="text-left font-bold text-slate-800 px-6 py-5 w-1/4">Características</th>
+          <th class="px-4 py-5 w-1/4">
+            <span class="inline-flex items-center gap-2 justify-center w-full font-bold text-green-700">
+              <span class="w-2.5 h-2.5 rounded-full bg-green-500"></span> START
+            </span>
+          </th>
+          <th class="px-4 py-5 w-1/4 bg-brand-50/60 relative">
+            <span class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-600 text-white text-[10px] font-bold px-3 py-1 rounded-full tracking-wide whitespace-nowrap">MÁS POPULAR</span>
+            <span class="inline-flex items-center gap-2 justify-center w-full font-bold text-brand-700">
+              <span class="w-2.5 h-2.5 rounded-full bg-brand-600"></span> BUSINESS
+            </span>
+          </th>
+          <th class="px-4 py-5 w-1/4">
+            <span class="inline-flex items-center gap-2 justify-center w-full font-bold text-purple-700">
+              <span class="w-2.5 h-2.5 rounded-full bg-purple-600"></span> ENTERPRISE
+            </span>
+          </th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-slate-100">
+        <tr>
+          <td class="px-6 py-4 font-semibold text-slate-800">Precio</td>
+          <td class="px-4 py-4 text-center font-bold text-slate-800">$2.490.000 <span class="font-normal text-slate-400 text-xs">COP</span></td>
+          <td class="px-4 py-4 text-center font-bold text-slate-800 bg-brand-50/60">$5.990.000 <span class="font-normal text-slate-400 text-xs">COP</span></td>
+          <td class="px-4 py-4 text-center font-bold text-slate-800">Desde $12.900.000 <span class="font-normal text-slate-400 text-xs">COP</span></td>
+        </tr>
+        <tr class="bg-slate-50/60">
+          <td class="px-6 py-4 font-semibold text-slate-800">Web</td>
+          <td class="px-4 py-4 text-center text-slate-600">5 secciones</td>
+          <td class="px-4 py-4 text-center text-slate-600 bg-brand-50/60">10 secciones</td>
+          <td class="px-4 py-4 text-center text-slate-600">Personalizada</td>
+        </tr>
+        <tr>
+          <td class="px-6 py-4 font-semibold text-slate-800">Automatizaciones</td>
+          <td class="px-4 py-4 text-center text-slate-600">1</td>
+          <td class="px-4 py-4 text-center text-slate-600 bg-brand-50/60">3</td>
+          <td class="px-4 py-4 text-center text-slate-600">5+</td>
+        </tr>
+        <tr class="bg-slate-50/60">
+          <td class="px-6 py-4 font-semibold text-slate-800">Integraciones</td>
+          <td class="px-4 py-4 text-center text-slate-600">1</td>
+          <td class="px-4 py-4 text-center text-slate-600 bg-brand-50/60">3</td>
+          <td class="px-4 py-4 text-center text-slate-600">5+</td>
+        </tr>
+        <tr>
+          <td class="px-6 py-4 font-semibold text-slate-800">IA</td>
+          <td class="px-4 py-4 text-center text-slate-300">—</td>
+          <td class="px-4 py-4 text-center text-slate-600 bg-brand-50/60">1 función</td>
+          <td class="px-4 py-4 text-center text-slate-600">Avanzada</td>
+        </tr>
+        <tr class="bg-slate-50/60">
+          <td class="px-6 py-4 font-semibold text-slate-800">Dashboard</td>
+          <td class="px-4 py-4 text-center text-slate-300">—</td>
+          <td class="px-4 py-4 text-center text-slate-600 bg-brand-50/60">1</td>
+          <td class="px-4 py-4 text-center text-slate-600">Empresarial</td>
+        </tr>
+        <tr>
+          <td class="px-6 py-4 font-semibold text-slate-800">KPIs</td>
+          <td class="px-4 py-4 text-center text-slate-300">—</td>
+          <td class="px-4 py-4 text-center text-slate-600 bg-brand-50/60">5</td>
+          <td class="px-4 py-4 text-center text-slate-600">Personalizados</td>
+        </tr>
+        <tr class="bg-slate-50/60">
+          <td class="px-6 py-4 font-semibold text-slate-800">Usuarios</td>
+          <td class="px-4 py-4 text-center text-slate-300">—</td>
+          <td class="px-4 py-4 text-center text-slate-600 bg-brand-50/60">Básico</td>
+          <td class="px-4 py-4 text-center text-slate-600">Personalizado</td>
+        </tr>
+        <tr>
+          <td class="px-6 py-4 font-semibold text-slate-800">Desarrollo a medida</td>
+          <td class="px-4 py-4 text-center text-slate-300">—</td>
+          <td class="px-4 py-4 text-center text-slate-600 bg-brand-50/60">Limitado</td>
+          <td class="px-4 py-4 text-center text-purple-600 font-bold">✓</td>
+        </tr>
+        <tr class="bg-slate-50/60">
+          <td class="px-6 py-4 font-semibold text-slate-800">Consultoría</td>
+          <td class="px-4 py-4 text-center text-slate-600">Básica</td>
+          <td class="px-4 py-4 text-center text-slate-600 bg-brand-50/60">Incluida</td>
+          <td class="px-4 py-4 text-center text-slate-600">Estratégica</td>
+        </tr>
+        <tr>
+          <td class="px-6 py-4 font-semibold text-slate-800">Soporte</td>
+          <td class="px-4 py-4 text-center text-slate-600">30 días</td>
+          <td class="px-4 py-4 text-center text-slate-600 bg-brand-50/60">60 días</td>
+          <td class="px-4 py-4 text-center text-slate-600">90 días</td>
+        </tr>
+        <tr class="bg-slate-50/60">
+          <td class="px-6 py-4 font-semibold text-slate-800 rounded-bl-none">Implementación</td>
+          <td class="px-4 py-4 text-center text-slate-600">7–14 días</td>
+          <td class="px-4 py-4 text-center text-slate-600 bg-brand-50/60">15–30 días</td>
+          <td class="px-4 py-4 text-center text-slate-600">30–60+ días</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr class="border-t border-slate-200">
+          <td class="px-6 py-5"></td>
+          <td class="px-4 py-5 text-center">
+            <a href="index.html#paquetes" class="inline-flex items-center justify-center border border-green-500 text-green-600 hover:bg-green-50 font-semibold text-sm px-5 py-2.5 rounded-full transition-colors">Elegir Start</a>
+          </td>
+          <td class="px-4 py-5 text-center bg-brand-50/60">
+            <a href="index.html#paquetes" class="inline-flex items-center justify-center bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm px-5 py-2.5 rounded-full transition-colors">Elegir Business</a>
+          </td>
+          <td class="px-4 py-5 text-center">
+            <a href="index.html#paquetes" class="inline-flex items-center justify-center border border-purple-500 text-purple-600 hover:bg-purple-50 font-semibold text-sm px-5 py-2.5 rounded-full transition-colors">Elegir Enterprise</a>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+  <div class="text-center mt-12">
+    <p class="text-slate-500 mb-4">¿Aún tienes dudas sobre cuál plan elegir?</p>
+    <a href="#" class="js-open-contact inline-flex items-center justify-center bg-brand-600 hover:bg-brand-700 text-white font-semibold px-8 py-3.5 rounded-full transition-colors">
+      Hablar con Atlas
+    </a>
+  </div>
+</section>
+
+<div class="px-4 sm:px-6 lg:px-8">
+  <div class="h-px max-w-4xl mx-auto bg-gradient-to-r from-transparent via-blue-300 to-transparent opacity-70 blur-[1.5px]"></div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-white pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+      <div class="lg:col-span-1">
+        <a href="index.html" class="flex items-center gap-2 mb-4">
+          <img src="assets/atlas-logo-icon.png" alt="" class="w-9 h-auto">
+          <span class="leading-tight">
+            <span class="block font-bold text-base tracking-tight">ATLAS</span>
+            <span class="block text-[9px] tracking-[0.2em] text-slate-500 -mt-1">CORPORATION</span>
+          </span>
+        </a>
+        <p class="text-sm text-slate-500">Automatizamos ideas.<br>Construimos el futuro digital.</p>
+        <div class="flex gap-3 mt-4 text-slate-400">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="font-bold text-sm mb-4">NAVEGACIÓN</h4>
+        <ul class="space-y-2.5 text-sm text-slate-500">
+          <li><a href="index.html" class="hover:text-brand-600">Inicio</a></li>
+          <li><a href="index.html#servicios" class="hover:text-brand-600">Servicios</a></li>
+          <li><a href="index.html#paquetes" class="hover:text-brand-600">Paquetes</a></li>
+          <li><a href="nosotros.html" class="hover:text-brand-600">Nosotros</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-bold text-sm mb-4">RECURSOS</h4>
+        <ul class="space-y-2.5 text-sm text-slate-500">
+          <li><a href="#" class="hover:text-brand-600">Blog</a></li>
+          <li><a href="#" class="hover:text-brand-600">Guías</a></li>
+          <li><a href="#" class="hover:text-brand-600">Preguntas Frecuentes</a></li>
+          <li><a href="diagnostico.html" class="hover:text-brand-600">Haz tu diagnóstico</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-bold text-sm mb-4">LEGAL</h4>
+        <ul class="space-y-2.5 text-sm text-slate-500">
+          <li><a href="#" class="hover:text-brand-600">Términos y Condiciones</a></li>
+          <li><a href="politica-privacidad.html" class="hover:text-brand-600">Política de Privacidad</a></li>
+          <li><a href="politica-cookies.html" class="hover:text-brand-600">Política de Cookies</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-bold text-sm mb-4">CONTACTO</h4>
+        <ul class="space-y-2.5 text-sm text-slate-500">
+          <li class="flex items-center gap-2">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            hola@atlascorp.com
+          </li>
+          <li class="flex items-center gap-2">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            +57 300 123 4567
+          </li>
+          <li class="flex items-center gap-2">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            Medellín, Colombia
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-slate-100 pt-6 text-center text-sm text-slate-400">
+      © 2026 Atlas Corporation. Todos los derechos reservados.
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp Widget -->
+<div class="fixed bottom-5 right-5 z-40 flex flex-col items-end gap-3">
+  <div id="whatsappPanel" class="hidden flex-col gap-1 bg-white rounded-2xl shadow-2xl border border-slate-200 p-3 w-72 sm:w-80">
+    <div class="flex items-center justify-between px-1 pb-2 mb-1 border-b border-slate-100">
+      <p class="text-sm font-bold text-slate-800">Escríbenos por WhatsApp</p>
+      <button id="whatsappClose" aria-label="Cerrar" class="text-slate-400 hover:text-slate-600 p-1">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <a href="https://wa.me/573007493334?text=Hola%2C%20quiero%20más%20información%20sobre%20Atlas%20Corporation" target="_blank" rel="noopener" class="flex items-center gap-3 p-2 rounded-xl hover:bg-slate-50 transition-colors">
+      <img src="assets/team-johan.jpg" alt="Johan Castañeda" class="w-11 h-11 rounded-full object-cover shrink-0">
+      <span class="min-w-0">
+        <span class="block text-sm font-semibold text-slate-800 truncate">Johan Castañeda</span>
+        <span class="block text-xs text-slate-500">+57 300 749 3334</span>
+      </span>
+      <svg class="w-5 h-5 text-green-500 ml-auto shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M12.001 2c-5.523 0-10 4.477-10 10 0 1.768.462 3.428 1.268 4.868L2 22l5.264-1.246A9.94 9.94 0 0012 22c5.523 0 10-4.477 10-10S17.524 2 12.001 2zm0 18.117c-1.588 0-3.115-.427-4.443-1.234l-.318-.19-3.13.74.75-3.09-.207-.323A7.985 7.985 0 014 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8z"/><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+    </a>
+    <a href="https://wa.me/573045591761?text=Hola%2C%20quiero%20más%20información%20sobre%20Atlas%20Corporation" target="_blank" rel="noopener" class="flex items-center gap-3 p-2 rounded-xl hover:bg-slate-50 transition-colors">
+      <img src="assets/team-mariana.jpg" alt="Mariana Carvajal Soto" class="w-11 h-11 rounded-full object-cover shrink-0">
+      <span class="min-w-0">
+        <span class="block text-sm font-semibold text-slate-800 truncate">Mariana Carvajal Soto</span>
+        <span class="block text-xs text-slate-500">+57 304 559 1761</span>
+      </span>
+      <svg class="w-5 h-5 text-green-500 ml-auto shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M12.001 2c-5.523 0-10 4.477-10 10 0 1.768.462 3.428 1.268 4.868L2 22l5.264-1.246A9.94 9.94 0 0012 22c5.523 0 10-4.477 10-10S17.524 2 12.001 2zm0 18.117c-1.588 0-3.115-.427-4.443-1.234l-.318-.19-3.13.74.75-3.09-.207-.323A7.985 7.985 0 014 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8z"/><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+    </a>
+  </div>
+
+  <button id="whatsappToggle" aria-label="Chatear por WhatsApp" class="w-14 h-14 rounded-full bg-green-500 hover:bg-green-600 shadow-lg hover:shadow-xl flex items-center justify-center transition-all hover:scale-105">
+    <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M12.001 2c-5.523 0-10 4.477-10 10 0 1.768.462 3.428 1.268 4.868L2 22l5.264-1.246A9.94 9.94 0 0012 22c5.523 0 10-4.477 10-10S17.524 2 12.001 2zm0 18.117c-1.588 0-3.115-.427-4.443-1.234l-.318-.19-3.13.74.75-3.09-.207-.323A7.985 7.985 0 014 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8z"/><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+  </button>
+</div>
+<script>
+(function () {
+  var waToggle = document.getElementById('whatsappToggle');
+  var waPanel = document.getElementById('whatsappPanel');
+  var waClose = document.getElementById('whatsappClose');
+  if (waToggle && waPanel) {
+    waToggle.addEventListener('click', function () {
+      var isHidden = waPanel.classList.contains('hidden');
+      waPanel.classList.toggle('hidden', !isHidden);
+      waPanel.classList.toggle('flex', isHidden);
+    });
+  }
+  if (waClose && waPanel) {
+    waClose.addEventListener('click', function () {
+      waPanel.classList.add('hidden');
+      waPanel.classList.remove('flex');
+    });
+  }
+})();
+</script>
+
+<!-- Cookie Consent Banner -->
+<div id="cookieBanner" class="hidden fixed bottom-24 sm:bottom-5 left-5 right-5 sm:right-auto z-40 max-w-sm">
+  <div class="bg-white rounded-2xl shadow-2xl border border-slate-200 p-5">
+    <div class="flex items-start gap-3 mb-3">
+      <div class="w-9 h-9 rounded-xl bg-brand-50 flex items-center justify-center shrink-0">
+        <svg class="w-5 h-5 text-brand-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="9" r="1" fill="currentColor" stroke="none"/><circle cx="14.5" cy="8" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="13.5" r="1" fill="currentColor" stroke="none"/><circle cx="9" cy="14.5" r="1" fill="currentColor" stroke="none"/><circle cx="12.5" cy="17" r="1" fill="currentColor" stroke="none"/></svg>
+      </div>
+      <p class="text-sm font-bold text-slate-800 pt-1.5">Uso de cookies</p>
+    </div>
+    <p class="text-sm text-slate-600 leading-relaxed mb-4">Usamos cookies propias para el correcto funcionamiento del sitio. Puedes aceptarlas, rechazarlas o conocer más en nuestra <a href="politica-cookies.html" class="text-brand-600 font-semibold hover:underline">Política de Cookies</a>.</p>
+    <div class="flex gap-2">
+      <button id="cookieReject" class="flex-1 border border-slate-300 hover:border-slate-400 text-slate-700 text-sm font-semibold px-4 py-2.5 rounded-full transition-colors">Rechazar</button>
+      <button id="cookieAccept" class="flex-1 bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold px-4 py-2.5 rounded-full transition-colors">Aceptar</button>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  var KEY = 'atlas_cookie_consent';
+  var banner = document.getElementById('cookieBanner');
+  if (!banner) return;
+  var already;
+  try { already = localStorage.getItem(KEY); } catch (e) { already = null; }
+  if (!already) {
+    banner.classList.remove('hidden');
+  }
+  function decide(value) {
+    try { localStorage.setItem(KEY, value); } catch (e) {}
+    banner.classList.add('hidden');
+  }
+  var acceptBtn = document.getElementById('cookieAccept');
+  var rejectBtn = document.getElementById('cookieReject');
+  if (acceptBtn) acceptBtn.addEventListener('click', function () { decide('accepted'); });
+  if (rejectBtn) rejectBtn.addEventListener('click', function () { decide('rejected'); });
+})();
+</script>
+
+<!-- Contact Modal -->
+<div id="contactModal" class="hidden fixed inset-0 z-[60] items-center justify-center p-4">
+  <div id="contactModalOverlay" class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"></div>
+  <div class="relative bg-white rounded-3xl shadow-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto">
+    <div class="flex items-center justify-between px-6 sm:px-8 pt-6 sm:pt-8 pb-4">
+      <div>
+        <p class="text-brand-600 text-xs font-semibold tracking-wide mb-1">HABLEMOS</p>
+        <h3 class="text-xl font-extrabold tracking-tight">Cuéntanos tu proyecto</h3>
+      </div>
+      <button id="contactModalClose" aria-label="Cerrar" type="button" class="text-slate-400 hover:text-slate-600 p-1.5 rounded-full hover:bg-slate-100 transition-colors">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <form id="contactForm" class="px-6 sm:px-8 pb-8 space-y-4">
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div>
+          <label for="cf-nombre" class="block text-sm font-semibold text-slate-700 mb-1.5">Nombre</label>
+          <input id="cf-nombre" name="nombre" type="text" required class="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent">
+        </div>
+        <div>
+          <label for="cf-apellidos" class="block text-sm font-semibold text-slate-700 mb-1.5">Apellidos</label>
+          <input id="cf-apellidos" name="apellidos" type="text" required class="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent">
+        </div>
+      </div>
+
+      <div>
+        <label for="cf-empresa" class="block text-sm font-semibold text-slate-700 mb-1.5">Empresa <span class="font-normal text-slate-400">(opcional)</span></label>
+        <input id="cf-empresa" name="empresa" type="text" class="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent">
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div>
+          <label for="cf-tipo-doc" class="block text-sm font-semibold text-slate-700 mb-1.5">Tipo de documento</label>
+          <select id="cf-tipo-doc" name="tipoDocumento" required class="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent bg-white">
+            <option value="">Selecciona...</option>
+            <option>Cédula de ciudadanía</option>
+            <option>Cédula de extranjería</option>
+            <option>NIT</option>
+            <option>Pasaporte</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div>
+          <label for="cf-documento" class="block text-sm font-semibold text-slate-700 mb-1.5">Número de documento</label>
+          <input id="cf-documento" name="documento" type="text" required class="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent">
+        </div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div>
+          <label for="cf-correo" class="block text-sm font-semibold text-slate-700 mb-1.5">Correo de contacto</label>
+          <input id="cf-correo" name="correo" type="email" required class="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent">
+        </div>
+        <div>
+          <label for="cf-telefono" class="block text-sm font-semibold text-slate-700 mb-1.5">Número de contacto</label>
+          <input id="cf-telefono" name="telefono" type="tel" required class="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent">
+        </div>
+      </div>
+
+      <div>
+        <label for="cf-requerimiento" class="block text-sm font-semibold text-slate-700 mb-1.5">Requerimiento</label>
+        <textarea id="cf-requerimiento" name="requerimiento" rows="4" required class="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent resize-none"></textarea>
+      </div>
+
+      <button type="submit" class="w-full inline-flex items-center justify-center bg-brand-600 hover:bg-brand-700 text-white font-semibold px-6 py-3.5 rounded-full transition-colors">
+        Enviar solicitud
+      </button>
+      <p class="text-xs text-slate-400 text-center">Al enviar, se abrirá tu aplicación de correo con la solicitud ya redactada hacia hola@atlascorp.com.</p>
+    </form>
+  </div>
+</div>
+<script>
+(function () {
+  var openers = document.querySelectorAll('.js-open-contact');
+  var modal = document.getElementById('contactModal');
+  var overlay = document.getElementById('contactModalOverlay');
+  var closeBtn = document.getElementById('contactModalClose');
+  var form = document.getElementById('contactForm');
+  if (!modal) return;
+
+  function openModal(e) {
+    if (e) e.preventDefault();
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.documentElement.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.documentElement.style.overflow = '';
+  }
+  openers.forEach(function (el) { el.addEventListener('click', openModal); });
+  if (overlay) overlay.addEventListener('click', closeModal);
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+  });
+
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var data = new FormData(form);
+      var get = function (key) { return (data.get(key) || '').toString().trim(); };
+      var nombre = get('nombre');
+      var apellidos = get('apellidos');
+      var empresa = get('empresa');
+      var tipoDocumento = get('tipoDocumento');
+      var documento = get('documento');
+      var correo = get('correo');
+      var telefono = get('telefono');
+      var requerimiento = get('requerimiento');
+
+      var lines = [
+        'Nueva solicitud desde el sitio web de Atlas Corporation',
+        '',
+        'Nombre completo: ' + nombre + ' ' + apellidos,
+        'Empresa: ' + (empresa || 'No indica'),
+        'Tipo de documento: ' + tipoDocumento,
+        'Número de documento: ' + documento,
+        'Correo de contacto: ' + correo,
+        'Número de contacto: ' + telefono,
+        '',
+        'Requerimiento:',
+        requerimiento
+      ];
+      var subject = encodeURIComponent('Nueva solicitud de contacto - ' + nombre + ' ' + apellidos);
+      var body = encodeURIComponent(lines.join('\n'));
+      window.location.href = 'mailto:hola@atlascorp.com?subject=' + subject + '&body=' + body;
+      closeModal();
+      form.reset();
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
