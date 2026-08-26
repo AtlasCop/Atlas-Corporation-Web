@@ -226,7 +226,7 @@
       </div>
       <h3 class="font-bold mb-2 transition-colors group-hover:text-fuchsia-600">Inteligencia Artificial</h3>
       <p class="text-sm text-slate-500 mb-4">Incorporamos IA para tomar mejores decisiones y mejorar la experiencia.</p>
-      <a href="#" class="inline-flex items-center gap-1 text-sm font-semibold text-fuchsia-600">Saber más <span class="transition-transform duration-300 group-hover:translate-x-1">→</span></a>
+      <a href="#" class="js-open-aiinfo inline-flex items-center gap-1 text-sm font-semibold text-fuchsia-600">Saber más <span class="transition-transform duration-300 group-hover:translate-x-1">→</span></a>
     </div>
     <div class="group relative border border-slate-200 rounded-2xl p-6 overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:border-amber-300 hover:shadow-xl hover:shadow-amber-100">
       <div class="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-amber-500 transition-transform duration-300 group-hover:scale-x-100"></div>
@@ -646,6 +646,96 @@
   var modal = document.getElementById('automationInfoModal');
   var overlay = document.getElementById('automationInfoModalOverlay');
   var closeBtn = document.getElementById('automationInfoModalClose');
+  if (!modal || !openers.length) return;
+
+  function openModal(e) {
+    if (e) e.preventDefault();
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.documentElement.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.documentElement.style.overflow = '';
+  }
+  openers.forEach(function (el) { el.addEventListener('click', openModal); });
+  if (overlay) overlay.addEventListener('click', closeModal);
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+  });
+})();
+</script>
+
+<!-- Inteligencia Artificial Info Modal -->
+<div id="aiInfoModal" class="hidden fixed inset-0 z-[60] items-center justify-center p-4">
+  <div id="aiInfoModalOverlay" class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"></div>
+  <div class="relative bg-white rounded-3xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+    <div class="flex items-center justify-between px-6 sm:px-8 pt-6 sm:pt-8 pb-5">
+      <div class="flex items-center gap-3">
+        <span class="shrink-0 w-11 h-11 rounded-2xl bg-gradient-to-br from-fuchsia-50 to-fuchsia-100 text-fuchsia-600 flex items-center justify-center">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0c-.845.845-1.343 1.508-1.5 2.5H9.5c-.157-.992-.655-1.655-1.5-2.5z"/></svg>
+        </span>
+        <div>
+          <p class="text-fuchsia-600 text-xs font-semibold tracking-wide mb-0.5">INTELIGENCIA ARTIFICIAL</p>
+          <h3 class="text-xl font-extrabold tracking-tight">Servicios como</h3>
+        </div>
+      </div>
+      <button id="aiInfoModalClose" aria-label="Cerrar" type="button" class="text-slate-400 hover:text-slate-600 p-1.5 rounded-full hover:bg-slate-100 transition-colors shrink-0">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="px-6 sm:px-8 pb-8 grid sm:grid-cols-2 gap-3">
+      <div class="flex items-center gap-3 rounded-xl border border-slate-200 px-4 py-3 transition-colors hover:border-fuchsia-300 hover:bg-fuchsia-50/40">
+        <span class="w-5 h-5 rounded-full bg-fuchsia-100 text-fuchsia-600 flex items-center justify-center shrink-0 text-xs font-bold">✓</span>
+        <span class="text-sm text-slate-700">Chatbots empresariales</span>
+      </div>
+      <div class="flex items-center gap-3 rounded-xl border border-slate-200 px-4 py-3 transition-colors hover:border-fuchsia-300 hover:bg-fuchsia-50/40">
+        <span class="w-5 h-5 rounded-full bg-fuchsia-100 text-fuchsia-600 flex items-center justify-center shrink-0 text-xs font-bold">✓</span>
+        <span class="text-sm text-slate-700">Asistentes virtuales</span>
+      </div>
+      <div class="flex items-center gap-3 rounded-xl border border-slate-200 px-4 py-3 transition-colors hover:border-fuchsia-300 hover:bg-fuchsia-50/40">
+        <span class="w-5 h-5 rounded-full bg-fuchsia-100 text-fuchsia-600 flex items-center justify-center shrink-0 text-xs font-bold">✓</span>
+        <span class="text-sm text-slate-700">IA para atención al cliente</span>
+      </div>
+      <div class="flex items-center gap-3 rounded-xl border border-slate-200 px-4 py-3 transition-colors hover:border-fuchsia-300 hover:bg-fuchsia-50/40">
+        <span class="w-5 h-5 rounded-full bg-fuchsia-100 text-fuchsia-600 flex items-center justify-center shrink-0 text-xs font-bold">✓</span>
+        <span class="text-sm text-slate-700">Automatización con IA</span>
+      </div>
+      <div class="flex items-center gap-3 rounded-xl border border-slate-200 px-4 py-3 transition-colors hover:border-fuchsia-300 hover:bg-fuchsia-50/40">
+        <span class="w-5 h-5 rounded-full bg-fuchsia-100 text-fuchsia-600 flex items-center justify-center shrink-0 text-xs font-bold">✓</span>
+        <span class="text-sm text-slate-700">Clasificación automática de información</span>
+      </div>
+      <div class="flex items-center gap-3 rounded-xl border border-slate-200 px-4 py-3 transition-colors hover:border-fuchsia-300 hover:bg-fuchsia-50/40">
+        <span class="w-5 h-5 rounded-full bg-fuchsia-100 text-fuchsia-600 flex items-center justify-center shrink-0 text-xs font-bold">✓</span>
+        <span class="text-sm text-slate-700">Análisis de documentos</span>
+      </div>
+      <div class="flex items-center gap-3 rounded-xl border border-slate-200 px-4 py-3 transition-colors hover:border-fuchsia-300 hover:bg-fuchsia-50/40">
+        <span class="w-5 h-5 rounded-full bg-fuchsia-100 text-fuchsia-600 flex items-center justify-center shrink-0 text-xs font-bold">✓</span>
+        <span class="text-sm text-slate-700">Generación de respuestas</span>
+      </div>
+      <div class="flex items-center gap-3 rounded-xl border border-slate-200 px-4 py-3 transition-colors hover:border-fuchsia-300 hover:bg-fuchsia-50/40">
+        <span class="w-5 h-5 rounded-full bg-fuchsia-100 text-fuchsia-600 flex items-center justify-center shrink-0 text-xs font-bold">✓</span>
+        <span class="text-sm text-slate-700">Asistentes internos para empleados</span>
+      </div>
+      <div class="flex items-center gap-3 rounded-xl border border-slate-200 px-4 py-3 transition-colors hover:border-fuchsia-300 hover:bg-fuchsia-50/40">
+        <span class="w-5 h-5 rounded-full bg-fuchsia-100 text-fuchsia-600 flex items-center justify-center shrink-0 text-xs font-bold">✓</span>
+        <span class="text-sm text-slate-700">Consulta inteligente de bases de conocimiento</span>
+      </div>
+      <div class="flex items-center gap-3 rounded-xl border border-slate-200 px-4 py-3 transition-colors hover:border-fuchsia-300 hover:bg-fuchsia-50/40">
+        <span class="w-5 h-5 rounded-full bg-fuchsia-100 text-fuchsia-600 flex items-center justify-center shrink-0 text-xs font-bold">✓</span>
+        <span class="text-sm text-slate-700">IA integrada a páginas web</span>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  var openers = document.querySelectorAll('.js-open-aiinfo');
+  var modal = document.getElementById('aiInfoModal');
+  var overlay = document.getElementById('aiInfoModalOverlay');
+  var closeBtn = document.getElementById('aiInfoModalClose');
   if (!modal || !openers.length) return;
 
   function openModal(e) {
