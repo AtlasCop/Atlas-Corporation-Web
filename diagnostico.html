@@ -301,25 +301,21 @@
     <div class="diag-step hidden" data-step="6">
       <p class="text-brand-600 text-xs font-semibold tracking-wide mb-2">ÚLTIMO PASO</p>
       <h2 class="text-2xl font-extrabold tracking-tight mb-2">¿A dónde te enviamos el resultado?</h2>
-      <p class="text-slate-500 text-sm mb-6">Con esto, nuestro equipo revisa tus respuestas y te contacta con una recomendación concreta.</p>
+      <p class="text-slate-500 text-sm mb-6">Con esto, nuestro equipo revisa tus respuestas y te contacta por WhatsApp con una recomendación concreta.</p>
       <div class="space-y-4">
         <div>
           <label for="diag-nombre" class="block text-sm font-semibold text-slate-700 mb-1.5">Nombre</label>
           <input id="diag-nombre" name="nombre" type="text" required class="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent">
         </div>
         <div>
-          <label for="diag-correo" class="block text-sm font-semibold text-slate-700 mb-1.5">Correo electrónico</label>
-          <input id="diag-correo" name="correo" type="email" required class="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent">
-        </div>
-        <div>
-          <label for="diag-telefono" class="block text-sm font-semibold text-slate-700 mb-1.5">WhatsApp <span class="font-normal text-slate-400">(opcional)</span></label>
-          <input id="diag-telefono" name="telefono" type="tel" class="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent">
+          <label for="diag-telefono" class="block text-sm font-semibold text-slate-700 mb-1.5">Número de WhatsApp</label>
+          <input id="diag-telefono" name="telefono" type="tel" required class="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent">
         </div>
       </div>
       <button type="submit" class="w-full mt-6 inline-flex items-center justify-center bg-brand-600 hover:bg-brand-700 text-white font-semibold px-6 py-3.5 rounded-full transition-colors">
         Ver mi diagnóstico
       </button>
-      <p class="text-xs text-slate-400 text-center mt-3">Al enviar, se abrirá tu aplicación de correo con tus respuestas ya redactadas hacia nuestro equipo.</p>
+      <p class="text-xs text-slate-400 text-center mt-3">Al enviar, se abrirá WhatsApp con tus respuestas ya redactadas hacia nuestro equipo.</p>
     </div>
 
   </form>
@@ -330,10 +326,10 @@
       <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
     </div>
     <h2 class="text-2xl font-extrabold tracking-tight mb-3">¡Diagnóstico completado!</h2>
-    <p class="text-slate-600 leading-relaxed mb-8 max-w-md mx-auto">Se abrió tu aplicación de correo con tus respuestas ya redactadas hacia nuestro equipo. Si prefieres, también puedes escribirnos directo por WhatsApp.</p>
+    <p class="text-slate-600 leading-relaxed mb-8 max-w-md mx-auto">Se abrió WhatsApp con tus respuestas ya redactadas hacia nuestro equipo. Si no se abrió automáticamente, usa el botón de abajo.</p>
     <div class="flex flex-col sm:flex-row gap-3 justify-center">
-      <a href="https://wa.me/573007493334?text=Hola%2C%20acabo%20de%20completar%20el%20diagn%C3%B3stico%20en%20la%20p%C3%A1gina%20de%20Atlas%20Corporation%20y%20quiero%20conversar%20sobre%20los%20resultados." target="_blank" rel="noopener" class="inline-flex items-center justify-center bg-brand-600 hover:bg-brand-700 text-white font-semibold px-6 py-3.5 rounded-full transition-colors">
-        Escribir por WhatsApp
+      <a id="diagWaFallback" href="https://wa.me/573007493334" target="_blank" rel="noopener" class="inline-flex items-center justify-center bg-brand-600 hover:bg-brand-700 text-white font-semibold px-6 py-3.5 rounded-full transition-colors">
+        Abrir WhatsApp
       </a>
       <a href="index.html" class="inline-flex items-center justify-center bg-white border border-slate-300 hover:border-slate-400 font-semibold px-6 py-3.5 rounded-full transition-colors">
         Volver al inicio
@@ -725,25 +721,23 @@
     var data = new FormData(form);
     var get = function (key) { return (data.get(key) || '').toString().trim(); };
     var nombre = get('nombre');
-    var correo = get('correo');
     var telefono = get('telefono');
 
     var lines = [
-      'Nuevo diagnóstico completado desde el sitio web de Atlas Corporation',
-      '',
-      'Nombre: ' + nombre,
-      'Correo: ' + correo,
-      'WhatsApp: ' + (telefono || 'No indica'),
+      'Hola, soy ' + (nombre || 'un visitante de la página') + '. Completé el diagnóstico en la página de Atlas Corporation y estas son mis respuestas:',
       '',
       '1. ¿Qué necesitas mejorar? ' + get('q1'),
       '2. ¿Cómo lo haces actualmente? ' + get('q2'),
       '3. ¿Cuántas personas participan? ' + get('q3'),
       '4. ¿Con qué frecuencia ocurre? ' + get('q4'),
-      '5. ¿Qué resultado esperas? ' + get('q5')
+      '5. ¿Qué resultado esperas? ' + get('q5'),
+      '',
+      'Mi WhatsApp: ' + telefono
     ];
-    var subject = encodeURIComponent('Diagnóstico Atlas - ' + (nombre || 'Sin nombre'));
-    var body = encodeURIComponent(lines.join('\n'));
-    window.location.href = 'mailto:hola@atlascorp.com?subject=' + subject + '&body=' + body;
+    var waUrl = 'https://wa.me/573007493334?text=' + encodeURIComponent(lines.join('\n'));
+    var waFallback = document.getElementById('diagWaFallback');
+    if (waFallback) waFallback.setAttribute('href', waUrl);
+    window.open(waUrl, '_blank', 'noopener');
 
     form.classList.add('hidden');
     progressWrap.classList.add('hidden');
