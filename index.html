@@ -146,11 +146,54 @@
       </a>
     </div>
 
-    <button class="lg:hidden p-2 -mr-2" aria-label="Menu">
-      <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    <button id="mobileMenuToggle" class="lg:hidden p-2 -mr-2" aria-label="Menu" aria-expanded="false">
+      <svg id="mobileMenuIconOpen" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      <svg id="mobileMenuIconClose" class="w-6 h-6 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
     </button>
   </div>
+
+  <div id="mobileMenuPanel" class="lg:hidden hidden border-t border-slate-100 bg-white">
+    <nav class="flex flex-col px-4 sm:px-6 py-3 gap-1 text-sm font-medium text-slate-700">
+      <a href="#" class="px-3 py-2.5 rounded-lg hover:bg-slate-50 hover:text-brand-600 transition-colors">Inicio</a>
+      <a href="#servicios" class="px-3 py-2.5 rounded-lg hover:bg-slate-50 hover:text-brand-600 transition-colors">Servicios</a>
+      <a href="#paquetes" class="px-3 py-2.5 rounded-lg hover:bg-slate-50 hover:text-brand-600 transition-colors">Paquetes</a>
+      <a href="nosotros.html" class="px-3 py-2.5 rounded-lg hover:bg-slate-50 hover:text-brand-600 transition-colors">Nosotros</a>
+      <div class="h-px bg-slate-100 my-2"></div>
+      <a href="diagnostico.html" class="inline-flex items-center justify-center bg-white border border-blue-300 text-brand-600 text-sm font-semibold px-5 py-2.5 rounded-full">Haz tu diagnóstico</a>
+      <a href="#" class="js-open-contact inline-flex items-center justify-center bg-brand-600 text-white text-sm font-semibold px-5 py-2.5 rounded-full mt-2">Hablar con Atlas</a>
+    </nav>
+  </div>
 </header>
+<script>
+(function () {
+  var toggle = document.getElementById('mobileMenuToggle');
+  var panel = document.getElementById('mobileMenuPanel');
+  var iconOpen = document.getElementById('mobileMenuIconOpen');
+  var iconClose = document.getElementById('mobileMenuIconClose');
+  if (!toggle || !panel) return;
+  function closeMenu() {
+    panel.classList.add('hidden');
+    iconOpen.classList.remove('hidden');
+    iconClose.classList.add('hidden');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+  function openMenu() {
+    panel.classList.remove('hidden');
+    iconOpen.classList.add('hidden');
+    iconClose.classList.remove('hidden');
+    toggle.setAttribute('aria-expanded', 'true');
+  }
+  toggle.addEventListener('click', function () {
+    if (panel.classList.contains('hidden')) openMenu(); else closeMenu();
+  });
+  panel.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', closeMenu);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeMenu();
+  });
+})();
+</script>
 
 <!-- Hero -->
 <section id="hero" class="relative overflow-hidden pt-14 pb-16">
