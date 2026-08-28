@@ -88,25 +88,16 @@
           <th class="px-4 py-5 w-1/4">
             <span class="inline-flex items-center gap-2 justify-center w-full font-bold text-green-700">
               <span class="w-2.5 h-2.5 rounded-full bg-green-500"></span> START
-              <button type="button" class="js-open-notincluded text-amber-500 hover:text-amber-600" aria-label="Ver qué no está incluido">
-                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg>
-              </button>
             </span>
           </th>
           <th class="px-4 py-5 w-1/4 bg-brand-50/60">
             <span class="inline-flex items-center gap-2 justify-center w-full font-bold text-brand-700">
               <span class="w-2.5 h-2.5 rounded-full bg-brand-600"></span> BUSINESS
-              <button type="button" class="js-open-notincluded text-amber-500 hover:text-amber-600" aria-label="Ver qué no está incluido">
-                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg>
-              </button>
             </span>
           </th>
           <th class="px-4 py-5 w-1/4">
             <span class="inline-flex items-center gap-2 justify-center w-full font-bold text-purple-700">
               <span class="w-2.5 h-2.5 rounded-full bg-purple-600"></span> ENTERPRISE
-              <button type="button" class="js-open-notincluded text-amber-500 hover:text-amber-600" aria-label="Ver qué no está incluido">
-                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg>
-              </button>
             </span>
           </th>
         </tr>
@@ -259,7 +250,7 @@
         <h4 class="font-bold text-sm mb-4">CONTACTO</h4>
         <ul class="space-y-2.5 text-sm text-slate-500">
           <li class="flex items-center gap-2">
-            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
             iconsultoriaygestion@gmail.com
           </li>
           <li class="flex items-center gap-2">
@@ -268,7 +259,7 @@
           </li>
           <li class="flex items-center gap-2">
             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-            Calle 48 BB 82 19
+            Medellín, Colombia
           </li>
         </ul>
       </div>
@@ -542,14 +533,12 @@
 </div>
 <script>
 (function () {
-  var openers = document.querySelectorAll('.js-open-notincluded');
   var modal = document.getElementById('notIncludedModal');
   var overlay = document.getElementById('notIncludedModalOverlay');
   var closeBtn = document.getElementById('notIncludedModalClose');
-  if (!modal || !openers.length) return;
+  if (!modal) return;
 
-  function openModal(e) {
-    if (e) e.preventDefault();
+  function openModal() {
     modal.classList.remove('hidden');
     modal.classList.add('flex');
     document.documentElement.style.overflow = 'hidden';
@@ -559,7 +548,7 @@
     modal.classList.remove('flex');
     document.documentElement.style.overflow = '';
   }
-  openers.forEach(function (el) { el.addEventListener('click', openModal); });
+  openModal();
   if (overlay) overlay.addEventListener('click', closeModal);
   if (closeBtn) closeBtn.addEventListener('click', closeModal);
   document.addEventListener('keydown', function (e) {
