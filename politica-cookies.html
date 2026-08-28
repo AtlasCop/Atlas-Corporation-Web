@@ -412,7 +412,7 @@
       <button type="submit" class="w-full inline-flex items-center justify-center bg-brand-600 hover:bg-brand-700 text-white font-semibold px-6 py-3.5 rounded-full transition-colors">
         Enviar solicitud
       </button>
-      <p class="text-xs text-slate-400 text-center">Al enviar, se abrirá tu aplicación de correo con la solicitud ya redactada hacia iconsultoriaygestion@gmail.com.</p>
+      <p class="text-xs text-slate-400 text-center">Al enviar, se abrirá WhatsApp con la solicitud ya redactada.</p>
     </form>
   </div>
 </div>
@@ -470,9 +470,8 @@
         'Requerimiento:',
         requerimiento
       ];
-      var subject = encodeURIComponent('Nueva solicitud de contacto - ' + nombre + ' ' + apellidos);
-      var body = encodeURIComponent(lines.join('\n'));
-      window.location.href = 'mailto:iconsultoriaygestion@gmail.com?subject=' + subject + '&body=' + body;
+      var waUrl = 'https://wa.me/573007493334?text=' + encodeURIComponent(lines.join('\n'));
+      window.open(waUrl, '_blank', 'noopener');
       closeModal();
       form.reset();
     });
