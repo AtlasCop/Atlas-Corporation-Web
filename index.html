@@ -134,6 +134,7 @@
       <a href="#" class="hover:text-brand-600">Inicio</a>
       <a href="#servicios" class="hover:text-brand-600">Servicios</a>
       <a href="#paquetes" class="hover:text-brand-600">Paquetes</a>
+      <a href="#proyectos" class="hover:text-brand-600">Proyectos</a>
       <a href="nosotros.html" class="hover:text-brand-600">Nosotros</a>
     </nav>
 
@@ -157,6 +158,7 @@
       <a href="#" class="px-3 py-2.5 rounded-lg hover:bg-slate-50 hover:text-brand-600 transition-colors">Inicio</a>
       <a href="#servicios" class="px-3 py-2.5 rounded-lg hover:bg-slate-50 hover:text-brand-600 transition-colors">Servicios</a>
       <a href="#paquetes" class="px-3 py-2.5 rounded-lg hover:bg-slate-50 hover:text-brand-600 transition-colors">Paquetes</a>
+      <a href="#proyectos" class="px-3 py-2.5 rounded-lg hover:bg-slate-50 hover:text-brand-600 transition-colors">Proyectos</a>
       <a href="nosotros.html" class="px-3 py-2.5 rounded-lg hover:bg-slate-50 hover:text-brand-600 transition-colors">Nosotros</a>
       <div class="h-px bg-slate-100 my-2"></div>
       <a href="diagnostico.html" class="inline-flex items-center justify-center bg-white border border-blue-300 text-brand-600 text-sm font-semibold px-5 py-2.5 rounded-full">Haz tu diagnóstico</a>
@@ -404,6 +406,115 @@
   <div class="h-px max-w-4xl mx-auto bg-gradient-to-r from-transparent via-blue-300 to-transparent opacity-70 blur-[1.5px]"></div>
 </div>
 
+<!-- Proyectos -->
+<section id="proyectos" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+  <div class="text-center mb-14">
+    <p class="text-brand-600 text-sm font-semibold tracking-wide mb-3">NUESTRO TRABAJO</p>
+    <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-4">Proyectos que hemos realizado</h2>
+    <p class="text-slate-500 max-w-xl mx-auto">Así ayudamos a nuestros clientes a transformar sus procesos con soluciones a la medida.</p>
+  </div>
+
+  <div class="grid lg:grid-cols-2 gap-12 items-center">
+    <div>
+      <p class="text-brand-600 font-bold text-sm mb-2">CASO DE ÉXITO</p>
+      <h3 class="text-2xl sm:text-3xl font-bold mb-4">Automatización y Portal de Clientes</h3>
+      <p class="text-slate-600 leading-relaxed mb-6">Diseñamos e implementamos un portal web junto con automatizaciones para optimizar la gestión de clientes, cotizaciones y seguimiento de proyectos, reduciendo el trabajo manual del equipo comercial.</p>
+      <p class="font-semibold text-slate-800 mb-3">Principales logros</p>
+      <ul class="space-y-3 text-sm text-slate-600">
+        <li class="flex gap-2"><span class="text-brand-600">✓</span>Reducción del 60% en el tiempo de generación de cotizaciones</li>
+        <li class="flex gap-2"><span class="text-brand-600">✓</span>Portal web con seguimiento en tiempo real para clientes</li>
+        <li class="flex gap-2"><span class="text-brand-600">✓</span>Automatización de notificaciones y reportes</li>
+        <li class="flex gap-2"><span class="text-brand-600">✓</span>Integración con WhatsApp y CRM existente</li>
+      </ul>
+    </div>
+
+    <div class="space-y-6">
+      <div class="group relative rounded-2xl overflow-hidden shadow-xl aspect-video bg-slate-900 cursor-pointer">
+        <img src="https://placehold.co/800x450/1e293b/64748b?text=Video+de+demostraci%C3%B3n" alt="Miniatura del video de demostración del proyecto" class="w-full h-full object-cover opacity-80 group-hover:opacity-60 transition-opacity">
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 text-brand-600 ml-1" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative rounded-2xl overflow-hidden shadow-lg" id="projectCarousel">
+        <div class="relative aspect-video overflow-hidden">
+          <div id="carouselTrack" class="flex h-full transition-transform duration-500 ease-in-out">
+            <img src="https://placehold.co/800x450/eef4ff/2563eb?text=Imagen+1" alt="Captura del proyecto 1" class="w-full h-full object-cover shrink-0">
+            <img src="https://placehold.co/800x450/dbe7ff/2563eb?text=Imagen+2" alt="Captura del proyecto 2" class="w-full h-full object-cover shrink-0">
+            <img src="https://placehold.co/800x450/eef4ff/1d4ed8?text=Imagen+3" alt="Captura del proyecto 3" class="w-full h-full object-cover shrink-0">
+            <img src="https://placehold.co/800x450/dbe7ff/1d4ed8?text=Imagen+4" alt="Captura del proyecto 4" class="w-full h-full object-cover shrink-0">
+          </div>
+        </div>
+        <button id="carouselPrev" aria-label="Imagen anterior" class="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/90 hover:bg-white shadow-md flex items-center justify-center transition-colors">
+          <svg class="w-5 h-5 text-slate-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <button id="carouselNext" aria-label="Imagen siguiente" class="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/90 hover:bg-white shadow-md flex items-center justify-center transition-colors">
+          <svg class="w-5 h-5 text-slate-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </button>
+        <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
+          <button class="carousel-dot w-2 h-2 rounded-full bg-white transition-colors" data-index="0" aria-label="Ir a la imagen 1"></button>
+          <button class="carousel-dot w-2 h-2 rounded-full bg-white/60 transition-colors" data-index="1" aria-label="Ir a la imagen 2"></button>
+          <button class="carousel-dot w-2 h-2 rounded-full bg-white/60 transition-colors" data-index="2" aria-label="Ir a la imagen 3"></button>
+          <button class="carousel-dot w-2 h-2 rounded-full bg-white/60 transition-colors" data-index="3" aria-label="Ir a la imagen 4"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+(function () {
+  var track = document.getElementById('carouselTrack');
+  var prevBtn = document.getElementById('carouselPrev');
+  var nextBtn = document.getElementById('carouselNext');
+  var dots = document.querySelectorAll('.carousel-dot');
+  var carousel = document.getElementById('projectCarousel');
+  if (!track || !dots.length) return;
+
+  var index = 0;
+  var total = dots.length;
+  var autoplayTimer;
+
+  function update() {
+    track.style.transform = 'translateX(-' + (index * 100) + '%)';
+    dots.forEach(function (dot, i) {
+      dot.classList.toggle('bg-white', i === index);
+      dot.classList.toggle('bg-white/60', i !== index);
+    });
+  }
+  function goTo(i) {
+    index = (i + total) % total;
+    update();
+  }
+  function next() { goTo(index + 1); }
+  function prev() { goTo(index - 1); }
+
+  function startAutoplay() { autoplayTimer = setInterval(next, 6000); }
+  function restartAutoplay() { clearInterval(autoplayTimer); startAutoplay(); }
+
+  if (nextBtn) nextBtn.addEventListener('click', function () { next(); restartAutoplay(); });
+  if (prevBtn) prevBtn.addEventListener('click', function () { prev(); restartAutoplay(); });
+  dots.forEach(function (dot) {
+    dot.addEventListener('click', function () {
+      goTo(parseInt(dot.getAttribute('data-index'), 10));
+      restartAutoplay();
+    });
+  });
+  if (carousel) {
+    carousel.addEventListener('mouseenter', function () { clearInterval(autoplayTimer); });
+    carousel.addEventListener('mouseleave', startAutoplay);
+  }
+
+  update();
+  startAutoplay();
+})();
+</script>
+
+<div class="px-4 sm:px-6 lg:px-8">
+  <div class="h-px max-w-4xl mx-auto bg-gradient-to-r from-transparent via-blue-300 to-transparent opacity-70 blur-[1.5px]"></div>
+</div>
+
 <!-- CTA -->
 <section class="relative overflow-hidden bg-white text-slate-900 py-20">
   <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
@@ -457,6 +568,7 @@
           <li><a href="#" class="hover:text-brand-600">Inicio</a></li>
           <li><a href="#servicios" class="hover:text-brand-600">Servicios</a></li>
           <li><a href="#paquetes" class="hover:text-brand-600">Paquetes</a></li>
+          <li><a href="#proyectos" class="hover:text-brand-600">Proyectos</a></li>
           <li><a href="nosotros.html" class="hover:text-brand-600">Nosotros</a></li>
         </ul>
       </div>
