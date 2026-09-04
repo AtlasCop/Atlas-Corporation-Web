@@ -428,36 +428,36 @@
       </ul>
     </div>
 
-    <div class="space-y-6">
-      <div class="group relative rounded-2xl overflow-hidden shadow-xl aspect-video bg-slate-900 cursor-pointer">
-        <img src="https://placehold.co/800x450/1e293b/64748b?text=Video+de+demostraci%C3%B3n" alt="Miniatura del video de demostración del proyecto" class="w-full h-full object-cover opacity-80 group-hover:opacity-60 transition-opacity">
-        <div class="absolute inset-0 flex items-center justify-center">
-          <div class="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-            <svg class="w-6 h-6 text-brand-600 ml-1" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-          </div>
-        </div>
-      </div>
-
-      <div class="relative rounded-2xl overflow-hidden shadow-lg" id="projectCarousel">
+    <div>
+      <div class="relative rounded-2xl overflow-hidden shadow-xl" id="projectCarousel">
         <div class="relative aspect-video overflow-hidden">
           <div id="carouselTrack" class="flex h-full transition-transform duration-500 ease-in-out">
+            <div class="group relative w-full h-full shrink-0 bg-slate-900 cursor-pointer">
+              <img src="https://placehold.co/800x450/1e293b/64748b?text=Video+de+demostraci%C3%B3n" alt="Miniatura del video de demostración del proyecto" class="w-full h-full object-cover opacity-80 group-hover:opacity-60 transition-opacity">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                  <svg class="w-6 h-6 text-brand-600 ml-1" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+              </div>
+            </div>
             <img src="https://placehold.co/800x450/eef4ff/2563eb?text=Imagen+1" alt="Captura del proyecto 1" class="w-full h-full object-cover shrink-0">
             <img src="https://placehold.co/800x450/dbe7ff/2563eb?text=Imagen+2" alt="Captura del proyecto 2" class="w-full h-full object-cover shrink-0">
             <img src="https://placehold.co/800x450/eef4ff/1d4ed8?text=Imagen+3" alt="Captura del proyecto 3" class="w-full h-full object-cover shrink-0">
             <img src="https://placehold.co/800x450/dbe7ff/1d4ed8?text=Imagen+4" alt="Captura del proyecto 4" class="w-full h-full object-cover shrink-0">
           </div>
         </div>
-        <button id="carouselPrev" aria-label="Imagen anterior" class="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/90 hover:bg-white shadow-md flex items-center justify-center transition-colors">
+        <button id="carouselPrev" aria-label="Anterior" class="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/90 hover:bg-white shadow-md flex items-center justify-center transition-colors">
           <svg class="w-5 h-5 text-slate-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
         </button>
-        <button id="carouselNext" aria-label="Imagen siguiente" class="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/90 hover:bg-white shadow-md flex items-center justify-center transition-colors">
+        <button id="carouselNext" aria-label="Siguiente" class="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/90 hover:bg-white shadow-md flex items-center justify-center transition-colors">
           <svg class="w-5 h-5 text-slate-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
         </button>
         <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
-          <button class="carousel-dot w-2 h-2 rounded-full bg-white transition-colors" data-index="0" aria-label="Ir a la imagen 1"></button>
-          <button class="carousel-dot w-2 h-2 rounded-full bg-white/60 transition-colors" data-index="1" aria-label="Ir a la imagen 2"></button>
-          <button class="carousel-dot w-2 h-2 rounded-full bg-white/60 transition-colors" data-index="2" aria-label="Ir a la imagen 3"></button>
-          <button class="carousel-dot w-2 h-2 rounded-full bg-white/60 transition-colors" data-index="3" aria-label="Ir a la imagen 4"></button>
+          <button class="carousel-dot w-2 h-2 rounded-full bg-white transition-colors" data-index="0" aria-label="Ir al video"></button>
+          <button class="carousel-dot w-2 h-2 rounded-full bg-white/60 transition-colors" data-index="1" aria-label="Ir a la imagen 1"></button>
+          <button class="carousel-dot w-2 h-2 rounded-full bg-white/60 transition-colors" data-index="2" aria-label="Ir a la imagen 2"></button>
+          <button class="carousel-dot w-2 h-2 rounded-full bg-white/60 transition-colors" data-index="3" aria-label="Ir a la imagen 3"></button>
+          <button class="carousel-dot w-2 h-2 rounded-full bg-white/60 transition-colors" data-index="4" aria-label="Ir a la imagen 4"></button>
         </div>
       </div>
     </div>
