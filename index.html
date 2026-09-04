@@ -452,6 +452,9 @@
         <button id="carouselNext" aria-label="Siguiente" class="absolute right-2 top-1/2 -translate-y-1/2 p-2 text-white drop-shadow-md hover:scale-110 transition-transform">
           <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
         </button>
+        <button id="carouselExpand" aria-label="Ampliar" class="absolute top-3 right-3 p-2 text-white drop-shadow-md hover:scale-110 transition-transform">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4h4M20 8V4h-4M4 16v4h4M20 16v4h-4"/></svg>
+        </button>
         <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
           <button class="carousel-dot w-2 h-2 rounded-full bg-white transition-colors" data-index="0" aria-label="Ir al video"></button>
           <button class="carousel-dot w-2 h-2 rounded-full bg-white/60 transition-colors" data-index="1" aria-label="Ir a la imagen 1"></button>
@@ -466,11 +469,21 @@
     </div>
   </div>
 </section>
+
+<div id="carouselLightbox" class="hidden fixed inset-0 z-[70] items-center justify-center p-4">
+  <div id="carouselLightboxOverlay" class="absolute inset-0 bg-slate-950/90 backdrop-blur-sm"></div>
+  <button id="carouselLightboxClose" aria-label="Cerrar" class="absolute top-5 right-5 text-white/80 hover:text-white p-2 rounded-full hover:bg-white/10 transition-colors z-10">
+    <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+  </button>
+  <div id="carouselLightboxContent" class="relative max-w-5xl w-full max-h-[85vh] flex items-center justify-center"></div>
+</div>
+
 <script>
 (function () {
   var track = document.getElementById('carouselTrack');
   var prevBtn = document.getElementById('carouselPrev');
   var nextBtn = document.getElementById('carouselNext');
+  var expandBtn = document.getElementById('carouselExpand');
   var dots = document.querySelectorAll('.carousel-dot');
   if (!track || !dots.length) return;
 
@@ -500,6 +513,47 @@
   });
 
   update();
+
+  var lightbox = document.getElementById('carouselLightbox');
+  var lightboxOverlay = document.getElementById('carouselLightboxOverlay');
+  var lightboxClose = document.getElementById('carouselLightboxClose');
+  var lightboxContent = document.getElementById('carouselLightboxContent');
+
+  function openLightbox() {
+    lightboxContent.innerHTML = '';
+    if (index === 0) {
+      var video = document.createElement('video');
+      video.src = 'assets/proyecto-video-demo.mp4';
+      video.controls = true;
+      video.autoplay = true;
+      video.muted = true;
+      video.loop = true;
+      video.playsInline = true;
+      video.className = 'max-w-full max-h-[85vh] rounded-lg';
+      lightboxContent.appendChild(video);
+    } else {
+      var img = document.createElement('img');
+      img.src = 'assets/proyecto-carrusel-' + index + '.jpg';
+      img.alt = 'Captura del proyecto ' + index + ' ampliada';
+      img.className = 'max-w-full max-h-[85vh] object-contain rounded-lg';
+      lightboxContent.appendChild(img);
+    }
+    lightbox.classList.remove('hidden');
+    lightbox.classList.add('flex');
+    document.documentElement.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    lightbox.classList.add('hidden');
+    lightbox.classList.remove('flex');
+    lightboxContent.innerHTML = '';
+    document.documentElement.style.overflow = '';
+  }
+  if (expandBtn) expandBtn.addEventListener('click', openLightbox);
+  if (lightboxOverlay) lightboxOverlay.addEventListener('click', closeLightbox);
+  if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) closeLightbox();
+  });
 })();
 </script>
 
