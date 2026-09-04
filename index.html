@@ -475,6 +475,12 @@
   <button id="carouselLightboxClose" aria-label="Cerrar" class="absolute top-5 right-5 text-white/80 hover:text-white p-2 rounded-full hover:bg-white/10 transition-colors z-10">
     <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
   </button>
+  <button id="carouselLightboxPrev" aria-label="Anterior" class="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 text-white/80 hover:text-white p-2 rounded-full hover:bg-white/10 transition-colors z-10">
+    <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+  </button>
+  <button id="carouselLightboxNext" aria-label="Siguiente" class="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 text-white/80 hover:text-white p-2 rounded-full hover:bg-white/10 transition-colors z-10">
+    <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+  </button>
   <div id="carouselLightboxContent" class="relative max-w-5xl w-full max-h-[85vh] flex items-center justify-center"></div>
 </div>
 
@@ -517,9 +523,11 @@
   var lightbox = document.getElementById('carouselLightbox');
   var lightboxOverlay = document.getElementById('carouselLightboxOverlay');
   var lightboxClose = document.getElementById('carouselLightboxClose');
+  var lightboxPrev = document.getElementById('carouselLightboxPrev');
+  var lightboxNext = document.getElementById('carouselLightboxNext');
   var lightboxContent = document.getElementById('carouselLightboxContent');
 
-  function openLightbox() {
+  function renderLightboxContent() {
     lightboxContent.innerHTML = '';
     if (index === 0) {
       var video = document.createElement('video');
@@ -538,6 +546,9 @@
       img.className = 'max-w-full max-h-[85vh] object-contain rounded-lg';
       lightboxContent.appendChild(img);
     }
+  }
+  function openLightbox() {
+    renderLightboxContent();
     lightbox.classList.remove('hidden');
     lightbox.classList.add('flex');
     document.documentElement.style.overflow = 'hidden';
@@ -551,8 +562,13 @@
   if (expandBtn) expandBtn.addEventListener('click', openLightbox);
   if (lightboxOverlay) lightboxOverlay.addEventListener('click', closeLightbox);
   if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+  if (lightboxPrev) lightboxPrev.addEventListener('click', function () { prev(); renderLightboxContent(); });
+  if (lightboxNext) lightboxNext.addEventListener('click', function () { next(); renderLightboxContent(); });
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) closeLightbox();
+    if (lightbox.classList.contains('hidden')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') { prev(); renderLightboxContent(); }
+    if (e.key === 'ArrowRight') { next(); renderLightboxContent(); }
   });
 })();
 </script>
