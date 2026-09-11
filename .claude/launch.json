@@ -6,6 +6,12 @@
       "runtimeExecutable": "python",
       "runtimeArgs": ["-m", "http.server", "8123"],
       "port": 8123
+    },
+    {
+      "name": "todo-motos",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8124", "--directory", "C:\\Users\\juanpablo\\Desktop\\Proyecto Todo Motos"],
+      "port": 8124
     }
   ]
 }
